@@ -1,0 +1,15 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head />
+  <body>
+    <div id="strutsErrors">
+      	<ul class="errorMessage">
+            <li><span>We received an empty file. Please make sure it is valid and try again.</span></li>	</ul>
+
+      
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
+    <script type="text/javascript">parent.onIframeError($('strutsErrors').innerHTML);</script>
+  </body>
+</html>

@@ -1,0 +1,527 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MH Newsdesk lite v1.2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-01-02 18:21+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"Language: da_DK\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:7
+msgid "Theme Info"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:17
+#, php-format
+msgid "Welcome to %1s %2s"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:25
+msgid "Important Links:"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:27 includes/mh-customizer.php:145
+msgid "Theme Info Page"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:30
+msgid "Support Center"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:40
+#, php-format
+msgid "Getting Started with %s"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:46 includes/mh-customizer.php:147
+msgid "Theme Documentation"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:53
+msgid "Visit Documentation"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:59 includes/mh-customizer.php:54
+msgid "Theme Options"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:66
+msgid "Customize Theme"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: comments.php:10
+#, php-format
+msgid "<span class=\"comment-count\">1 Comment</span> <span class=\"comment-count-more\">on \"%2$s\"</span>"
+msgid_plural "<span class=\"comment-count\">%1$s Comments</span> <span class=\"comment-count-more\">on \"%2$s\"</span>"
+msgstr[0] "<span class=\"comment-count\">1 Kommentar</span> <span class=\"comment-count-more\">på \"%2$s\"</span>"
+msgstr[1] "<span class=\"comment-count\">%1$s Kommentarer</span> <span class=\"comment-count-more\">på \"%2$s\"</span>"
+
+# @ mh-newsdesk-lite
+#: comments.php:18 includes/mh-custom-functions.php:145
+#: includes/mh-custom-functions.php:162
+msgid "&laquo;"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: comments.php:18 includes/mh-custom-functions.php:146
+#: includes/mh-custom-functions.php:162
+msgid "&raquo;"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: comments.php:25
+#, php-format
+msgid "<span class=\"comment-count\">%s</span> <span class=\"comment-count-more\">Trackbacks & Pingbacks</span>"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: comments.php:34
+msgid "Comments are closed."
+msgstr "Kommentarer er lukket"
+
+# @ mh-newsdesk-lite
+#: comments.php:45
+msgid "Leave a comment"
+msgstr "Efterlad en kommentar"
+
+# @ mh-newsdesk-lite
+#: comments.php:46
+msgid "Your email address will not be published."
+msgstr "Din e-mail adresse vil ikke blive offentliggjort."
+
+# @ mh-newsdesk-lite
+#: comments.php:48
+msgid "Comment"
+msgstr "Kommentar"
+
+# @ mh-newsdesk-lite
+#: content-none.php:4
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr "Desværre, men din søgning gav intet resultat. Prøv et andet søgeord."
+
+# @ mh-newsdesk-lite
+#: content-none.php:6
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Vi kan ikke finde det du leder efter, måske ville en søgning hjælpe."
+
+# @ mh-newsdesk-lite
+#: content-single.php:4
+msgid "TOPICS:"
+msgstr "EMNER:"
+
+# @ mh-newsdesk-lite
+#: functions.php:31
+msgid "Main Navigation"
+msgstr "Hovedmenu"
+
+# @ mh-newsdesk-lite
+#: functions.php:84
+msgid "Global Sidebar"
+msgstr "Global Sidebar"
+
+# @ mh-newsdesk-lite
+#: functions.php:84
+msgid "Sidebar used globally throughout your site."
+msgstr "Sidebaren bruges på hele din side."
+
+# @ mh-newsdesk-lite
+#: functions.php:85
+msgid "Home 1 - Large Column (Top)"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: functions.php:85 functions.php:88
+msgid "Large column on Homepage."
+msgstr "Stor sidebar på forsiden."
+
+# @ mh-newsdesk-lite
+#: functions.php:86
+msgid "Home 2 - First Column"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: functions.php:86
+msgid "First column on Homepage."
+msgstr "Første kolonne på forsiden."
+
+# @ mh-newsdesk-lite
+#: functions.php:87
+msgid "Home 3 - Second Column"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: functions.php:87
+msgid "Second column on Homepage."
+msgstr "Anden kolonne på forsiden."
+
+# @ mh-newsdesk-lite
+#: functions.php:88
+msgid "Home 4 - Large Column (Bottom)"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: functions.php:89
+msgid "Home 5 - Sidebar"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: functions.php:89
+msgid "Sidebar on Homepage."
+msgstr "Sidebar på forsiden."
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:68
+msgid "Page not found (404)"
+msgstr "Side ikke fundet (404)"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:50
+#, php-format
+msgctxt "post author"
+msgid "Articles by %s"
+msgstr "Artikler af %s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:62
+msgid "Archives"
+msgstr "Arkiver"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:70
+#, php-format
+msgid "Search Results for %s"
+msgstr "Søgeresultater for %s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:89
+#, php-format
+msgctxt "post author"
+msgid "Posted By: %s"
+msgstr "Indlæg af: %s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:192
+msgid "Back to post"
+msgstr "Tilbage til indlæg"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:194
+msgid "Previous image"
+msgstr "Forrige billede"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:197
+msgid "Previous post"
+msgstr "Forrige indlæg"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:202
+msgid "Next image"
+msgstr "Næste billede"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:204
+msgid "Next post"
+msgstr "Næste indlæg"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:222
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s ved %2$s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:226
+msgid "(Edit)"
+msgstr "(Redigér)"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:229
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar afventer gennemgang."
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:246
+msgid "Name "
+msgstr "Navn"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:247
+msgid "Email "
+msgstr "E-mail"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:248
+msgid "Website"
+msgstr "Hjemmeside"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:58
+msgid "General"
+msgstr "Generelt"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:64 includes/mh-customizer.php:122
+msgid "Read More"
+msgstr "Læs mere"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:70
+msgid "Custom Excerpt Length in Words"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:71
+msgid "Custom Excerpt More-Text"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:94
+msgid "Enable"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:95
+msgid "Disable"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:72
+msgid "Sidebar"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:72 includes/mh-customizer.php:96
+msgid "Right Sidebar"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:72 includes/mh-customizer.php:97
+msgid "Left Sidebar"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:82
+#: includes/widgets/mh-posts-large.php:70
+#: includes/widgets/mh-recent-posts.php:52
+msgid "Skip Posts (Offset):"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:87
+#: includes/widgets/mh-posts-large.php:75
+#: includes/widgets/mh-recent-posts.php:57
+msgid "Ignore Sticky Posts"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:59
+#: includes/widgets/mh-posts-large.php:51
+#: includes/widgets/mh-recent-posts.php:44
+msgid "Title:"
+msgstr "Titel:"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:63
+#: includes/widgets/mh-posts-large.php:55
+msgid "Select a Category:"
+msgstr "Vælg en kategori:"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:65
+#: includes/widgets/mh-posts-large.php:57
+msgid "All"
+msgstr "Alle"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:78
+#: includes/widgets/mh-recent-posts.php:48
+msgid "Limit Post Number:"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-recent-posts.php:9
+msgid "Display a list of most recent posts."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: template-authorbox.php:4
+msgid "About the Author"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:33 admin/admin.php:95 includes/mh-customizer.php:151
+msgid "Rate this theme"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: footer.php:4
+#, php-format
+msgid "Copyright %1$s | MH Newsdesk lite by %2$s"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:9
+msgid "Display posts from any category."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:90
+#: includes/widgets/mh-posts-large.php:78
+msgid "Info:"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:90
+#: includes/widgets/mh-posts-large.php:78
+msgid "This is the lite version of this widget with basic features. If you need more professional features and options, you can upgrade to the premium version of this theme."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-posts-large.php:9
+msgid "Display post with large image on front page for use in \"Home 1\" or \"Home 4\" widget areas."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:8
+msgctxt "widget name"
+msgid "MH Custom Posts [lite]"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-posts-large.php:8
+msgctxt "widget name"
+msgid "MH Posts Large [lite]"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-recent-posts.php:8
+msgctxt "widget name"
+msgid "MH Recent Posts"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: comments.php:39
+#, php-format
+msgid "<span class=\"comment-count\">Be the first to comment</span> <span class=\"comment-count-more\">on \"%s\"</span>"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:49
+#, php-format
+msgid "Need any help with configuring %s? The documentation for this theme includes all theme related information that is needed to get your site up and running in no time. In case you have any additional questions, feel free to reach out in the theme support forums on WordPress.org."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:62
+#, php-format
+msgid "%s supports the Theme Customizer for all theme settings. Click \"Customize Theme\" to open the Customizer now."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:72 includes/mh-customizer.php:13
+msgid "MH Newsdesk Pro"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:75 includes/mh-customizer.php:16
+msgid "If you like the free version of this theme, you will LOVE the full version of MH Newsdesk which includes unique custom widgets, additional features and more useful options to customize your website."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:79 includes/mh-customizer.php:46
+msgid "Learn more about MH Newsdesk"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:91
+#, php-format
+msgid "%1s is proudly brought to you by %2s. If you like %3s: %4s."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:19
+msgid "Additional Features:"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:23
+msgid "Options to modify color scheme"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:26
+msgid "Typography options"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:29
+msgid "Several additional widget areas"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:32
+msgid "Additional custom widgets"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:35
+msgid "Additional custom menu slots"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:38
+msgid "Social buttons, related articles, ..."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:41
+msgid "News ticker and many more..."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:59
+msgid "More Features"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:142
+msgid "Upgrade to MH Newsdesk Pro"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:143
+msgid "Theme Related Links:"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:149
+msgid "Support Forum"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:7
+msgid "Welcome to MH Newsdesk lite"
+msgstr ""

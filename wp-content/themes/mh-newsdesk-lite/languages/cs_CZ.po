@@ -1,0 +1,528 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MH Newsdesk lite v1.2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-01-02 18:21+0100\n"
+"Last-Translator: \n"
+"Language-Team: Karolína Vyskočilová (kybernaut.cz) <karolina@kybernaut.cz>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"Language: cs_CZ\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:7
+msgid "Theme Info"
+msgstr "Informace o šabloně"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:17
+#, php-format
+msgid "Welcome to %1s %2s"
+msgstr "Vítejte na %1s %2s"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:25
+msgid "Important Links:"
+msgstr "Důležité odkazy:"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:27 includes/mh-customizer.php:145
+msgid "Theme Info Page"
+msgstr "Stránka informací o šabloně"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:30
+msgid "Support Center"
+msgstr "Podpora"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:40
+#, php-format
+msgid "Getting Started with %s"
+msgstr "Začínáme s %s"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:46 includes/mh-customizer.php:147
+msgid "Theme Documentation"
+msgstr "Dokumentace šablony"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:53
+msgid "Visit Documentation"
+msgstr "Prohlédnout dokumentaci k šabloně"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:59 includes/mh-customizer.php:54
+msgid "Theme Options"
+msgstr "Nastavení šablony"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:66
+msgid "Customize Theme"
+msgstr "Upravit šablonu"
+
+# @ mh-newsdesk-lite
+#: comments.php:10
+#, php-format
+msgid "<span class=\"comment-count\">1 Comment</span> <span class=\"comment-count-more\">on \"%2$s\"</span>"
+msgid_plural "<span class=\"comment-count\">%1$s Comments</span> <span class=\"comment-count-more\">on \"%2$s\"</span>"
+msgstr[0] "<span class=\"comment-count\">1 Komentář</span> <span class=\"comment-count-more\">k \"%2$s\"</span>"
+msgstr[1] "<span class=\"comment-count\">%1$s Komentáře</span> <span class=\"comment-count-more\">k \"%2$s\"</span>"
+msgstr[2] "<span class=\"comment-count\">%1$s Komentářů</span> <span class=\"comment-count-more\">k \"%2$s\"</span>"
+
+# @ mh-newsdesk-lite
+#: comments.php:18 includes/mh-custom-functions.php:145
+#: includes/mh-custom-functions.php:162
+msgid "&laquo;"
+msgstr "&laquo;"
+
+# @ mh-newsdesk-lite
+#: comments.php:18 includes/mh-custom-functions.php:146
+#: includes/mh-custom-functions.php:162
+msgid "&raquo;"
+msgstr "&raquo;"
+
+# @ mh-newsdesk-lite
+#: comments.php:25
+#, php-format
+msgid "<span class=\"comment-count\">%s</span> <span class=\"comment-count-more\">Trackbacks & Pingbacks</span>"
+msgstr "<span class=\"comment-count\">%s</span> <span class=\"comment-count-more\">Trackbacks & Pingbacks</span>"
+
+# @ mh-newsdesk-lite
+#: comments.php:34
+msgid "Comments are closed."
+msgstr "Komentáře jsou zakázány"
+
+# @ mh-newsdesk-lite
+#: comments.php:45
+msgid "Leave a comment"
+msgstr "Zanechte komentář"
+
+# @ mh-newsdesk-lite
+#: comments.php:46
+msgid "Your email address will not be published."
+msgstr "Vaše emailová adresa nebude zveřejněna."
+
+# @ mh-newsdesk-lite
+#: comments.php:48
+msgid "Comment"
+msgstr "Komentář"
+
+# @ mh-newsdesk-lite
+#: content-none.php:4
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr "Omlouváme se, ale nenašli jsme nic, co by odpovídalo vašemu vyhledávání. Zkuste to znovu s jinými klíčovými slovy."
+
+# @ mh-newsdesk-lite
+#: content-none.php:6
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Vypadá to, že nemůžeme zobrazit to, co právě hledáte. Zkuste to najít pomocí vyhledávání."
+
+# @ mh-newsdesk-lite
+#: content-single.php:4
+msgid "TOPICS:"
+msgstr "TÉMATA:"
+
+# @ mh-newsdesk-lite
+#: functions.php:31
+msgid "Main Navigation"
+msgstr "Hlavní navigace"
+
+# @ mh-newsdesk-lite
+#: functions.php:84
+msgid "Global Sidebar"
+msgstr "Hlavní postranní lišta"
+
+# @ mh-newsdesk-lite
+#: functions.php:84
+msgid "Sidebar used globally throughout your site."
+msgstr "Sidebar, který se používá na všech místech na vaší stránce."
+
+# @ mh-newsdesk-lite
+#: functions.php:85
+msgid "Home 1 - Large Column (Top)"
+msgstr "Home 1 - Velký sloupec (nahoře)"
+
+# @ mh-newsdesk-lite
+#: functions.php:85 functions.php:88
+msgid "Large column on Homepage."
+msgstr "Velký sloupec na Hlavní stránce"
+
+# @ mh-newsdesk-lite
+#: functions.php:86
+msgid "Home 2 - First Column"
+msgstr "Home 2 - První sloupec"
+
+# @ mh-newsdesk-lite
+#: functions.php:86
+msgid "First column on Homepage."
+msgstr "První sloupec na Hlavní stránce."
+
+# @ mh-newsdesk-lite
+#: functions.php:87
+msgid "Home 3 - Second Column"
+msgstr "Home 3 - Druhý sloupec"
+
+# @ mh-newsdesk-lite
+#: functions.php:87
+msgid "Second column on Homepage."
+msgstr "Druhý sloupec na Hlavní stránce."
+
+# @ mh-newsdesk-lite
+#: functions.php:88
+msgid "Home 4 - Large Column (Bottom)"
+msgstr "Home 4 - Velký sloupec (dole)"
+
+# @ mh-newsdesk-lite
+#: functions.php:89
+msgid "Home 5 - Sidebar"
+msgstr "Home 5 - Sidebar"
+
+# @ mh-newsdesk-lite
+#: functions.php:89
+msgid "Sidebar on Homepage."
+msgstr "Sidebar na Hlavní stránce."
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:68
+msgid "Page not found (404)"
+msgstr "Stránka nenalezena (404)"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:50
+#, php-format
+msgctxt "post author"
+msgid "Articles by %s"
+msgstr "Články od %s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:62
+msgid "Archives"
+msgstr "Archivy"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:70
+#, php-format
+msgid "Search Results for %s"
+msgstr "Výsledky vyhledávání %s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:89
+#, php-format
+msgctxt "post author"
+msgid "Posted By: %s"
+msgstr "Příspěvky od %s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:192
+msgid "Back to post"
+msgstr "Zpět na příspěvek"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:194
+msgid "Previous image"
+msgstr "Předchozí obrázek"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:197
+msgid "Previous post"
+msgstr "Předchozí příspěvek"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:202
+msgid "Next image"
+msgstr "Další obrázek"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:204
+msgid "Next post"
+msgstr "Další příspěvek"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:222
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s z %2$s"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:226
+msgid "(Edit)"
+msgstr "(Editovat)"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:229
+msgid "Your comment is awaiting moderation."
+msgstr "Váš komentář čeká na schválení moderátorem."
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:246
+msgid "Name "
+msgstr "Jméno"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:247
+msgid "Email "
+msgstr "Email"
+
+# @ mh-newsdesk-lite
+#: includes/mh-custom-functions.php:248
+msgid "Website"
+msgstr "Webová stránka"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:58
+msgid "General"
+msgstr "Obecné"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:64 includes/mh-customizer.php:122
+msgid "Read More"
+msgstr "Číst dále"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:70
+msgid "Custom Excerpt Length in Words"
+msgstr "Vlastní délka perexu ve slovech"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:71
+msgid "Custom Excerpt More-Text"
+msgstr "Vlastní text perexu Číst dále"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:94
+msgid "Enable"
+msgstr "Povolit."
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:95
+msgid "Disable"
+msgstr "Zakázat"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:72
+msgid "Sidebar"
+msgstr "Sidebar"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:72 includes/mh-customizer.php:96
+msgid "Right Sidebar"
+msgstr "Pravý sidebar"
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:72 includes/mh-customizer.php:97
+msgid "Left Sidebar"
+msgstr "Levý sidebar"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:82
+#: includes/widgets/mh-posts-large.php:70
+#: includes/widgets/mh-recent-posts.php:52
+msgid "Skip Posts (Offset):"
+msgstr "Přeskočit příspěvky (Offset):"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:87
+#: includes/widgets/mh-posts-large.php:75
+#: includes/widgets/mh-recent-posts.php:57
+msgid "Ignore Sticky Posts"
+msgstr "Ignorovat Sticky Posts"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:59
+#: includes/widgets/mh-posts-large.php:51
+#: includes/widgets/mh-recent-posts.php:44
+msgid "Title:"
+msgstr "Nadpis:"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:63
+#: includes/widgets/mh-posts-large.php:55
+msgid "Select a Category:"
+msgstr "Vyberte kategorii:"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:65
+#: includes/widgets/mh-posts-large.php:57
+msgid "All"
+msgstr "Vše"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:78
+#: includes/widgets/mh-recent-posts.php:48
+msgid "Limit Post Number:"
+msgstr "Omezit počet příspěvků:"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-recent-posts.php:9
+msgid "Display a list of most recent posts."
+msgstr "Zobrazí seznam posledních příspěvků."
+
+# @ mh-newsdesk-lite
+#: template-authorbox.php:4
+msgid "About the Author"
+msgstr "O autorovi"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:33 admin/admin.php:95 includes/mh-customizer.php:151
+msgid "Rate this theme"
+msgstr "Ohodnotit tuto šablonu"
+
+# @ mh-newsdesk-lite
+#: footer.php:4
+#, php-format
+msgid "Copyright %1$s | MH Newsdesk lite by %2$s"
+msgstr "Copyright %1$s | MH Newsdesk lite od %2$s"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:9
+msgid "Display posts from any category."
+msgstr "Zobrazit příspěvek z libovolné kategorie."
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:90
+#: includes/widgets/mh-posts-large.php:78
+msgid "Info:"
+msgstr "Info:"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:90
+#: includes/widgets/mh-posts-large.php:78
+msgid "This is the lite version of this widget with basic features. If you need more professional features and options, you can upgrade to the premium version of this theme."
+msgstr "Toto je odlehčená verze tohoto widgetu s úplně základními vlastnostmi. Pokud potřebujete detailnější a propracovanější nastavení, můžete upgradovat na prémiovou verzi této šablony."
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-posts-large.php:9
+msgid "Display post with large image on front page for use in \"Home 1\" or \"Home 4\" widget areas."
+msgstr "Zobrazí příspěvek s velký obrázkem na hlavní stránce, k použití ve widgetech \"Home 1\"  a \"Home 2\"."
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-custom-posts.php:8
+msgctxt "widget name"
+msgid "MH Custom Posts [lite]"
+msgstr "MH Custom Posts (Vybrané příspěvky) [lite]"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-posts-large.php:8
+msgctxt "widget name"
+msgid "MH Posts Large [lite]"
+msgstr "MH Posts Large (Velký příspěvek) [lite]"
+
+# @ mh-newsdesk-lite
+#: includes/widgets/mh-recent-posts.php:8
+msgctxt "widget name"
+msgid "MH Recent Posts"
+msgstr "MH Recent Posts (Poslední příspěvky)"
+
+# @ mh-newsdesk-lite
+#: comments.php:39
+#, php-format
+msgid "<span class=\"comment-count\">Be the first to comment</span> <span class=\"comment-count-more\">on \"%s\"</span>"
+msgstr "<span class=\"comment-count\">Přidej komentář jako první</span> <span class=\"comment-count-more\">k \"%s\"</span>"
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:49
+#, php-format
+msgid "Need any help with configuring %s? The documentation for this theme includes all theme related information that is needed to get your site up and running in no time. In case you have any additional questions, feel free to reach out in the theme support forums on WordPress.org."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:62
+#, php-format
+msgid "%s supports the Theme Customizer for all theme settings. Click \"Customize Theme\" to open the Customizer now."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:72 includes/mh-customizer.php:13
+msgid "MH Newsdesk Pro"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:75 includes/mh-customizer.php:16
+msgid "If you like the free version of this theme, you will LOVE the full version of MH Newsdesk which includes unique custom widgets, additional features and more useful options to customize your website."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:79 includes/mh-customizer.php:46
+msgid "Learn more about MH Newsdesk"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:91
+#, php-format
+msgid "%1s is proudly brought to you by %2s. If you like %3s: %4s."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:19
+msgid "Additional Features:"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:23
+msgid "Options to modify color scheme"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:26
+msgid "Typography options"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:29
+msgid "Several additional widget areas"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:32
+msgid "Additional custom widgets"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:35
+msgid "Additional custom menu slots"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:38
+msgid "Social buttons, related articles, ..."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:41
+msgid "News ticker and many more..."
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:59
+msgid "More Features"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:142
+msgid "Upgrade to MH Newsdesk Pro"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:143
+msgid "Theme Related Links:"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: includes/mh-customizer.php:149
+msgid "Support Forum"
+msgstr ""
+
+# @ mh-newsdesk-lite
+#: admin/admin.php:7
+msgid "Welcome to MH Newsdesk lite"
+msgstr ""

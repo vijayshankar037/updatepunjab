@@ -1,0 +1,1585 @@
+[Wed, 19 Jul 2017 07:53:07 +0000] OPEN: array (
+  'cwd' => 
+  array (
+    'isowner' => false,
+    'ts' => 1500450301,
+    'mime' => 'directory',
+    'read' => 1,
+    'write' => 1,
+    'size' => 0,
+    'hash' => 'l1_Lw',
+    'name' => 'news',
+    'rootRev' => '',
+    'options' => 
+    array (
+      'path' => '',
+      'url' => 'http://updatepunjab.com/',
+      'tmbUrl' => 'http://updatepunjab.com/.tmb/',
+      'disabled' => 
+      array (
+        0 => 'chmod',
+      ),
+      'separator' => '/',
+      'copyOverwrite' => 1,
+      'uploadOverwrite' => 1,
+      'uploadMaxSize' => 9223372036854775807,
+      'uploadMaxConn' => 3,
+      'uploadMime' => 
+      array (
+        'firstOrder' => 'allow',
+        'allow' => 
+        array (
+          0 => 'text',
+          1 => 'image',
+          2 => 'video',
+          3 => 'audio',
+          4 => 'application',
+          5 => 'model',
+          6 => 'chemical',
+          7 => 'x-conference',
+          8 => 'message',
+        ),
+        'deny' => 
+        array (
+        ),
+      ),
+      'dispInlineRegex' => '^(?:(?:image|text)|application/x-shockwave-flash$)',
+      'jpgQuality' => 100,
+      'archivers' => 
+      array (
+        'create' => 
+        array (
+          0 => 'application/x-tar',
+          1 => 'application/x-gzip',
+          2 => 'application/x-bzip2',
+          3 => 'application/x-xz',
+        ),
+        'extract' => 
+        array (
+          0 => 'application/x-tar',
+          1 => 'application/x-gzip',
+          2 => 'application/x-bzip2',
+          3 => 'application/x-xz',
+        ),
+        'createext' => 
+        array (
+          'application/x-tar' => 'tar',
+          'application/x-gzip' => 'tgz',
+          'application/x-bzip2' => 'tbz',
+          'application/x-xz' => 'xz',
+        ),
+      ),
+      'uiCmdMap' => 
+      array (
+      ),
+      'syncChkAsTs' => 1,
+      'syncMinMs' => 10000,
+      'i18nFolderName' => 0,
+      'tmbCrop' => 1,
+      'csscls' => 'elfinder-navbar-root-local',
+    ),
+    'volumeid' => 'l1_',
+    'locked' => 1,
+    'dirs' => 1,
+    'isroot' => 1,
+    'phash' => '',
+    'root' => 'l1_Lw',
+  ),
+  'options' => 
+  array (
+    'path' => 'news',
+    'url' => 'http://updatepunjab.com/',
+    'tmbUrl' => 'http://updatepunjab.com/.tmb/',
+    'disabled' => 
+    array (
+      0 => 'chmod',
+    ),
+    'separator' => '/',
+    'copyOverwrite' => 1,
+    'uploadOverwrite' => 1,
+    'uploadMaxSize' => 9223372036854775807,
+    'uploadMaxConn' => 3,
+    'uploadMime' => 
+    array (
+      'firstOrder' => 'allow',
+      'allow' => 
+      array (
+        0 => 'text',
+        1 => 'image',
+        2 => 'video',
+        3 => 'audio',
+        4 => 'application',
+        5 => 'model',
+        6 => 'chemical',
+        7 => 'x-conference',
+        8 => 'message',
+      ),
+      'deny' => 
+      array (
+      ),
+    ),
+    'dispInlineRegex' => '^(?:(?:image|text)|application/x-shockwave-flash$)',
+    'jpgQuality' => 100,
+    'archivers' => 
+    array (
+      'create' => 
+      array (
+        0 => 'application/x-tar',
+        1 => 'application/x-gzip',
+        2 => 'application/x-bzip2',
+        3 => 'application/x-xz',
+      ),
+      'extract' => 
+      array (
+        0 => 'application/x-tar',
+        1 => 'application/x-gzip',
+        2 => 'application/x-bzip2',
+        3 => 'application/x-xz',
+      ),
+      'createext' => 
+      array (
+        'application/x-tar' => 'tar',
+        'application/x-gzip' => 'tgz',
+        'application/x-bzip2' => 'tbz',
+        'application/x-xz' => 'xz',
+      ),
+    ),
+    'uiCmdMap' => 
+    array (
+    ),
+    'syncChkAsTs' => 1,
+    'syncMinMs' => 10000,
+    'i18nFolderName' => 0,
+    'tmbCrop' => 1,
+  ),
+  'files' => 
+  array (
+    0 => 
+    array (
+      'isowner' => false,
+      'ts' => 1500450301,
+      'mime' => 'directory',
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_Lw',
+      'name' => 'news',
+      'rootRev' => '',
+      'options' => 
+      array (
+        'path' => '',
+        'url' => 'http://updatepunjab.com/',
+        'tmbUrl' => 'http://updatepunjab.com/.tmb/',
+        'disabled' => 
+        array (
+          0 => 'chmod',
+        ),
+        'separator' => '/',
+        'copyOverwrite' => 1,
+        'uploadOverwrite' => 1,
+        'uploadMaxSize' => 9223372036854775807,
+        'uploadMaxConn' => 3,
+        'uploadMime' => 
+        array (
+          'firstOrder' => 'allow',
+          'allow' => 
+          array (
+            0 => 'text',
+            1 => 'image',
+            2 => 'video',
+            3 => 'audio',
+            4 => 'application',
+            5 => 'model',
+            6 => 'chemical',
+            7 => 'x-conference',
+            8 => 'message',
+          ),
+          'deny' => 
+          array (
+          ),
+        ),
+        'dispInlineRegex' => '^(?:(?:image|text)|application/x-shockwave-flash$)',
+        'jpgQuality' => 100,
+        'archivers' => 
+        array (
+          'create' => 
+          array (
+            0 => 'application/x-tar',
+            1 => 'application/x-gzip',
+            2 => 'application/x-bzip2',
+            3 => 'application/x-xz',
+          ),
+          'extract' => 
+          array (
+            0 => 'application/x-tar',
+            1 => 'application/x-gzip',
+            2 => 'application/x-bzip2',
+            3 => 'application/x-xz',
+          ),
+          'createext' => 
+          array (
+            'application/x-tar' => 'tar',
+            'application/x-gzip' => 'tgz',
+            'application/x-bzip2' => 'tbz',
+            'application/x-xz' => 'xz',
+          ),
+        ),
+        'uiCmdMap' => 
+        array (
+        ),
+        'syncChkAsTs' => 1,
+        'syncMinMs' => 10000,
+        'i18nFolderName' => 0,
+        'tmbCrop' => 1,
+        'csscls' => 'elfinder-navbar-root-local',
+      ),
+      'volumeid' => 'l1_',
+      'locked' => 1,
+      'dirs' => 1,
+      'isroot' => 1,
+      'phash' => '',
+    ),
+    1 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525320,
+      'read' => 1,
+      'write' => 1,
+      'size' => '418',
+      'hash' => 'l1_aW5kZXgucGhw',
+      'name' => 'index.php',
+      'phash' => 'l1_Lw',
+    ),
+    2 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-markdown',
+      'ts' => 1495602605,
+      'read' => 1,
+      'write' => 0,
+      'size' => '15',
+      'hash' => 'l1_UkVBRE1FLm1k',
+      'name' => 'README.md',
+      'phash' => 'l1_Lw',
+    ),
+    3 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '3301',
+      'hash' => 'l1_d3AtbG9hZC5waHA',
+      'name' => 'wp-load.php',
+      'phash' => 'l1_Lw',
+    ),
+    4 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498216975,
+      'read' => 1,
+      'write' => 1,
+      'size' => '26',
+      'hash' => 'l1_cGhwLmluaQ',
+      'name' => 'php.ini',
+      'phash' => 'l1_Lw',
+    ),
+    5 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480527533,
+      'read' => 1,
+      'write' => 1,
+      'size' => '2835',
+      'hash' => 'l1_d3AtY29uZmlnLnBocA',
+      'name' => 'wp-config.php',
+      'phash' => 'l1_Lw',
+    ),
+    6 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525316,
+      'read' => 1,
+      'write' => 1,
+      'size' => '364',
+      'hash' => 'l1_d3AtYmxvZy1oZWFkZXIucGhw',
+      'name' => 'wp-blog-header.php',
+      'phash' => 'l1_Lw',
+    ),
+    7 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498049563,
+      'read' => 1,
+      'write' => 1,
+      'size' => '34',
+      'hash' => 'l1_Lmh0YWNjZXNz',
+      'name' => '.htaccess',
+      'phash' => 'l1_Lw',
+    ),
+    8 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '2853',
+      'hash' => 'l1_d3AtY29uZmlnLXNhbXBsZS5waHA',
+      'name' => 'wp-config-sample.php',
+      'phash' => 'l1_Lw',
+    ),
+    9 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525320,
+      'read' => 1,
+      'write' => 1,
+      'size' => '21',
+      'hash' => 'l1_aW5mby5waHA',
+      'name' => 'info.php',
+      'phash' => 'l1_Lw',
+    ),
+    10 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498216975,
+      'read' => 1,
+      'write' => 1,
+      'size' => '26',
+      'hash' => 'l1_LnVzZXIuaW5p',
+      'name' => '.user.ini',
+      'phash' => 'l1_Lw',
+    ),
+    11 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/html',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '7413',
+      'hash' => 'l1_cmVhZG1lLmh0bWw',
+      'name' => 'readme.html',
+      'phash' => 'l1_Lw',
+    ),
+    12 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525312,
+      'read' => 1,
+      'write' => 1,
+      'size' => '3286',
+      'hash' => 'l1_d3AtY3Jvbi5waHA',
+      'name' => 'wp-cron.php',
+      'phash' => 'l1_Lw',
+    ),
+    13 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1480527172,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtYWRtaW4',
+      'name' => 'wp-admin',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    14 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1500396222,
+      'read' => 1,
+      'write' => 0,
+      'size' => '39397242',
+      'hash' => 'l1_MThfanVseV9kYl9iYWNrdXAuc3Fs',
+      'name' => '18_july_db_backup.sql',
+      'phash' => 'l1_Lw',
+    ),
+    15 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450210,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3Atc25hcHNob3Rz',
+      'name' => 'wp-snapshots',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    16 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '5447',
+      'hash' => 'l1_d3AtYWN0aXZhdGUucGhw',
+      'name' => 'wp-activate.php',
+      'phash' => 'l1_Lw',
+    ),
+    17 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450787,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_LnRtYg',
+      'name' => '.tmb',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+    ),
+    18 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '29924',
+      'hash' => 'l1_d3Atc2lnbnVwLnBocA',
+      'name' => 'wp-signup.php',
+      'phash' => 'l1_Lw',
+    ),
+    19 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '19935',
+      'hash' => 'l1_bGljZW5zZS50eHQ',
+      'name' => 'license.txt',
+      'phash' => 'l1_Lw',
+    ),
+    20 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '4513',
+      'hash' => 'l1_d3AtdHJhY2tiYWNrLnBocA',
+      'name' => 'wp-trackback.php',
+      'phash' => 'l1_Lw',
+    ),
+    21 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1494557993,
+      'read' => 1,
+      'write' => 1,
+      'size' => '72',
+      'hash' => 'l1_cm9ib3RzLnR4dA',
+      'name' => 'robots.txt',
+      'phash' => 'l1_Lw',
+    ),
+    22 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtaW5jbHVkZXM',
+      'name' => 'wp-includes',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    23 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '16200',
+      'hash' => 'l1_d3Atc2V0dGluZ3MucGhw',
+      'name' => 'wp-settings.php',
+      'phash' => 'l1_Lw',
+    ),
+    24 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '34327',
+      'hash' => 'l1_d3AtbG9naW4ucGhw',
+      'name' => 'wp-login.php',
+      'phash' => 'l1_Lw',
+    ),
+    25 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500397655,
+      'read' => 1,
+      'write' => 0,
+      'size' => 0,
+      'hash' => 'l1_LmdpdA',
+      'name' => '.git',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    26 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525321,
+      'read' => 1,
+      'write' => 1,
+      'size' => '20',
+      'hash' => 'l1_ZGIucGhw',
+      'name' => 'db.php',
+      'phash' => 'l1_Lw',
+    ),
+    27 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '2422',
+      'hash' => 'l1_d3AtbGlua3Mtb3BtbC5waHA',
+      'name' => 'wp-links-opml.php',
+      'phash' => 'l1_Lw',
+    ),
+    28 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1495602488,
+      'read' => 1,
+      'write' => 0,
+      'size' => '34949630',
+      'hash' => 'l1_ZGJfYmFja3VwLnNxbA',
+      'name' => 'db_backup.sql',
+      'phash' => 'l1_Lw',
+    ),
+    29 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '3065',
+      'hash' => 'l1_eG1scnBjLnBocA',
+      'name' => 'xmlrpc.php',
+      'phash' => 'l1_Lw',
+    ),
+    30 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '1627',
+      'hash' => 'l1_d3AtY29tbWVudHMtcG9zdC5waHA',
+      'name' => 'wp-comments-post.php',
+      'phash' => 'l1_Lw',
+    ),
+    31 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450769,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudA',
+      'name' => 'wp-content',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    32 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498216975,
+      'read' => 1,
+      'write' => 1,
+      'size' => '26',
+      'hash' => 'l1_cGhwNS5pbmk',
+      'name' => 'php5.ini',
+      'phash' => 'l1_Lw',
+    ),
+    33 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '8048',
+      'hash' => 'l1_d3AtbWFpbC5waHA',
+      'name' => 'wp-mail.php',
+      'phash' => 'l1_Lw',
+    ),
+  ),
+  'api' => '2.1',
+  'uplMaxSize' => '2M',
+  'uplMaxFile' => '20',
+  'netDrivers' => 
+  array (
+  ),
+  'maxTargets' => 1000,
+) 
+[Wed, 19 Jul 2017 07:53:53 +0000] GET: array (
+  'content' => '<?php
+/**
+ * The base configuration for WordPress
+ *
+ * The wp-config.php creation script uses this file during the
+ * installation. You don\'t have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/Editing_wp-config.php
+ *
+ * @package WordPress
+ */
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define(\'DB_NAME\', \'news_DB\');
+
+/** MySQL database username */
+define(\'DB_USER\', \'sushant\');
+
+/** MySQL database password */
+define(\'DB_PASSWORD\', \'sushant@123#\');
+
+/** MySQL hostname */
+define(\'DB_HOST\', \'localhost\');
+
+/** Database Charset to use in creating database tables. */
+define(\'DB_CHARSET\', \'utf8\');
+
+/** The Database Collate type. Don\'t change this if in doubt. */
+define(\'DB_COLLATE\', \'\');
+
+/**#@+
+ * Authentication Unique Keys and Salts.
+ *
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+define(\'AUTH_KEY\',         \'put your unique phrase here\');
+define(\'SECURE_AUTH_KEY\',  \'put your unique phrase here\');
+define(\'LOGGED_IN_KEY\',    \'put your unique phrase here\');
+define(\'NONCE_KEY\',        \'put your unique phrase here\');
+define(\'AUTH_SALT\',        \'put your unique phrase here\');
+define(\'SECURE_AUTH_SALT\', \'put your unique phrase here\');
+define(\'LOGGED_IN_SALT\',   \'put your unique phrase here\');
+define(\'NONCE_SALT\',       \'put your unique phrase here\');
+
+/**#@-*/
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix  = \'wp_\';
+
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the Codex.
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
+ */
+define(\'WP_DEBUG\', false);
+
+/* That\'s all, stop editing! Happy blogging. */
+
+/** Absolute path to the WordPress directory. */
+if ( !defined(\'ABSPATH\') )
+	define(\'ABSPATH\', dirname(__FILE__) . \'/\');
+
+/** Sets up WordPress vars and included files. */
+require_once(ABSPATH . \'wp-settings.php\');
+',
+) 
+[Wed, 19 Jul 2017 07:59:08 +0000] OPEN: array (
+  'cwd' => 
+  array (
+    'isowner' => false,
+    'ts' => 1500450301,
+    'mime' => 'directory',
+    'read' => 1,
+    'write' => 1,
+    'size' => 0,
+    'hash' => 'l1_Lw',
+    'name' => 'news',
+    'rootRev' => '',
+    'options' => 
+    array (
+      'path' => '',
+      'url' => 'http://updatepunjab.com/',
+      'tmbUrl' => 'http://updatepunjab.com/.tmb/',
+      'disabled' => 
+      array (
+        0 => 'chmod',
+      ),
+      'separator' => '/',
+      'copyOverwrite' => 1,
+      'uploadOverwrite' => 1,
+      'uploadMaxSize' => 9223372036854775807,
+      'uploadMaxConn' => 3,
+      'uploadMime' => 
+      array (
+        'firstOrder' => 'allow',
+        'allow' => 
+        array (
+          0 => 'text',
+          1 => 'image',
+          2 => 'video',
+          3 => 'audio',
+          4 => 'application',
+          5 => 'model',
+          6 => 'chemical',
+          7 => 'x-conference',
+          8 => 'message',
+        ),
+        'deny' => 
+        array (
+        ),
+      ),
+      'dispInlineRegex' => '^(?:(?:image|text)|application/x-shockwave-flash$)',
+      'jpgQuality' => 100,
+      'archivers' => 
+      array (
+        'create' => 
+        array (
+          0 => 'application/x-tar',
+          1 => 'application/x-gzip',
+          2 => 'application/x-bzip2',
+          3 => 'application/x-xz',
+        ),
+        'extract' => 
+        array (
+          0 => 'application/x-tar',
+          1 => 'application/x-gzip',
+          2 => 'application/x-bzip2',
+          3 => 'application/x-xz',
+        ),
+        'createext' => 
+        array (
+          'application/x-tar' => 'tar',
+          'application/x-gzip' => 'tgz',
+          'application/x-bzip2' => 'tbz',
+          'application/x-xz' => 'xz',
+        ),
+      ),
+      'uiCmdMap' => 
+      array (
+      ),
+      'syncChkAsTs' => 1,
+      'syncMinMs' => 10000,
+      'i18nFolderName' => 0,
+      'tmbCrop' => 1,
+      'csscls' => 'elfinder-navbar-root-local',
+    ),
+    'volumeid' => 'l1_',
+    'locked' => 1,
+    'dirs' => 1,
+    'isroot' => 1,
+    'phash' => '',
+    'root' => 'l1_Lw',
+  ),
+  'options' => 
+  array (
+    'path' => 'news',
+    'url' => 'http://updatepunjab.com/',
+    'tmbUrl' => 'http://updatepunjab.com/.tmb/',
+    'disabled' => 
+    array (
+      0 => 'chmod',
+    ),
+    'separator' => '/',
+    'copyOverwrite' => 1,
+    'uploadOverwrite' => 1,
+    'uploadMaxSize' => 9223372036854775807,
+    'uploadMaxConn' => 3,
+    'uploadMime' => 
+    array (
+      'firstOrder' => 'allow',
+      'allow' => 
+      array (
+        0 => 'text',
+        1 => 'image',
+        2 => 'video',
+        3 => 'audio',
+        4 => 'application',
+        5 => 'model',
+        6 => 'chemical',
+        7 => 'x-conference',
+        8 => 'message',
+      ),
+      'deny' => 
+      array (
+      ),
+    ),
+    'dispInlineRegex' => '^(?:(?:image|text)|application/x-shockwave-flash$)',
+    'jpgQuality' => 100,
+    'archivers' => 
+    array (
+      'create' => 
+      array (
+        0 => 'application/x-tar',
+        1 => 'application/x-gzip',
+        2 => 'application/x-bzip2',
+        3 => 'application/x-xz',
+      ),
+      'extract' => 
+      array (
+        0 => 'application/x-tar',
+        1 => 'application/x-gzip',
+        2 => 'application/x-bzip2',
+        3 => 'application/x-xz',
+      ),
+      'createext' => 
+      array (
+        'application/x-tar' => 'tar',
+        'application/x-gzip' => 'tgz',
+        'application/x-bzip2' => 'tbz',
+        'application/x-xz' => 'xz',
+      ),
+    ),
+    'uiCmdMap' => 
+    array (
+    ),
+    'syncChkAsTs' => 1,
+    'syncMinMs' => 10000,
+    'i18nFolderName' => 0,
+    'tmbCrop' => 1,
+  ),
+  'files' => 
+  array (
+    0 => 
+    array (
+      'isowner' => false,
+      'ts' => 1500450301,
+      'mime' => 'directory',
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_Lw',
+      'name' => 'news',
+      'rootRev' => '',
+      'options' => 
+      array (
+        'path' => '',
+        'url' => 'http://updatepunjab.com/',
+        'tmbUrl' => 'http://updatepunjab.com/.tmb/',
+        'disabled' => 
+        array (
+          0 => 'chmod',
+        ),
+        'separator' => '/',
+        'copyOverwrite' => 1,
+        'uploadOverwrite' => 1,
+        'uploadMaxSize' => 9223372036854775807,
+        'uploadMaxConn' => 3,
+        'uploadMime' => 
+        array (
+          'firstOrder' => 'allow',
+          'allow' => 
+          array (
+            0 => 'text',
+            1 => 'image',
+            2 => 'video',
+            3 => 'audio',
+            4 => 'application',
+            5 => 'model',
+            6 => 'chemical',
+            7 => 'x-conference',
+            8 => 'message',
+          ),
+          'deny' => 
+          array (
+          ),
+        ),
+        'dispInlineRegex' => '^(?:(?:image|text)|application/x-shockwave-flash$)',
+        'jpgQuality' => 100,
+        'archivers' => 
+        array (
+          'create' => 
+          array (
+            0 => 'application/x-tar',
+            1 => 'application/x-gzip',
+            2 => 'application/x-bzip2',
+            3 => 'application/x-xz',
+          ),
+          'extract' => 
+          array (
+            0 => 'application/x-tar',
+            1 => 'application/x-gzip',
+            2 => 'application/x-bzip2',
+            3 => 'application/x-xz',
+          ),
+          'createext' => 
+          array (
+            'application/x-tar' => 'tar',
+            'application/x-gzip' => 'tgz',
+            'application/x-bzip2' => 'tbz',
+            'application/x-xz' => 'xz',
+          ),
+        ),
+        'uiCmdMap' => 
+        array (
+        ),
+        'syncChkAsTs' => 1,
+        'syncMinMs' => 10000,
+        'i18nFolderName' => 0,
+        'tmbCrop' => 1,
+        'csscls' => 'elfinder-navbar-root-local',
+      ),
+      'volumeid' => 'l1_',
+      'locked' => 1,
+      'dirs' => 1,
+      'isroot' => 1,
+      'phash' => '',
+    ),
+    1 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525320,
+      'read' => 1,
+      'write' => 1,
+      'size' => '418',
+      'hash' => 'l1_aW5kZXgucGhw',
+      'name' => 'index.php',
+      'phash' => 'l1_Lw',
+    ),
+    2 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-markdown',
+      'ts' => 1495602605,
+      'read' => 1,
+      'write' => 0,
+      'size' => '15',
+      'hash' => 'l1_UkVBRE1FLm1k',
+      'name' => 'README.md',
+      'phash' => 'l1_Lw',
+    ),
+    3 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '3301',
+      'hash' => 'l1_d3AtbG9hZC5waHA',
+      'name' => 'wp-load.php',
+      'phash' => 'l1_Lw',
+    ),
+    4 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498216975,
+      'read' => 1,
+      'write' => 1,
+      'size' => '26',
+      'hash' => 'l1_cGhwLmluaQ',
+      'name' => 'php.ini',
+      'phash' => 'l1_Lw',
+    ),
+    5 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480527533,
+      'read' => 1,
+      'write' => 1,
+      'size' => '2835',
+      'hash' => 'l1_d3AtY29uZmlnLnBocA',
+      'name' => 'wp-config.php',
+      'phash' => 'l1_Lw',
+    ),
+    6 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525316,
+      'read' => 1,
+      'write' => 1,
+      'size' => '364',
+      'hash' => 'l1_d3AtYmxvZy1oZWFkZXIucGhw',
+      'name' => 'wp-blog-header.php',
+      'phash' => 'l1_Lw',
+    ),
+    7 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498049563,
+      'read' => 1,
+      'write' => 1,
+      'size' => '34',
+      'hash' => 'l1_Lmh0YWNjZXNz',
+      'name' => '.htaccess',
+      'phash' => 'l1_Lw',
+    ),
+    8 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '2853',
+      'hash' => 'l1_d3AtY29uZmlnLXNhbXBsZS5waHA',
+      'name' => 'wp-config-sample.php',
+      'phash' => 'l1_Lw',
+    ),
+    9 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525320,
+      'read' => 1,
+      'write' => 1,
+      'size' => '21',
+      'hash' => 'l1_aW5mby5waHA',
+      'name' => 'info.php',
+      'phash' => 'l1_Lw',
+    ),
+    10 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498216975,
+      'read' => 1,
+      'write' => 1,
+      'size' => '26',
+      'hash' => 'l1_LnVzZXIuaW5p',
+      'name' => '.user.ini',
+      'phash' => 'l1_Lw',
+    ),
+    11 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/html',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '7413',
+      'hash' => 'l1_cmVhZG1lLmh0bWw',
+      'name' => 'readme.html',
+      'phash' => 'l1_Lw',
+    ),
+    12 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525312,
+      'read' => 1,
+      'write' => 1,
+      'size' => '3286',
+      'hash' => 'l1_d3AtY3Jvbi5waHA',
+      'name' => 'wp-cron.php',
+      'phash' => 'l1_Lw',
+    ),
+    13 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1480527172,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtYWRtaW4',
+      'name' => 'wp-admin',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    14 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1500396222,
+      'read' => 1,
+      'write' => 0,
+      'size' => '39397242',
+      'hash' => 'l1_MThfanVseV9kYl9iYWNrdXAuc3Fs',
+      'name' => '18_july_db_backup.sql',
+      'phash' => 'l1_Lw',
+    ),
+    15 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450210,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3Atc25hcHNob3Rz',
+      'name' => 'wp-snapshots',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    16 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '5447',
+      'hash' => 'l1_d3AtYWN0aXZhdGUucGhw',
+      'name' => 'wp-activate.php',
+      'phash' => 'l1_Lw',
+    ),
+    17 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450787,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_LnRtYg',
+      'name' => '.tmb',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+    ),
+    18 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '29924',
+      'hash' => 'l1_d3Atc2lnbnVwLnBocA',
+      'name' => 'wp-signup.php',
+      'phash' => 'l1_Lw',
+    ),
+    19 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '19935',
+      'hash' => 'l1_bGljZW5zZS50eHQ',
+      'name' => 'license.txt',
+      'phash' => 'l1_Lw',
+    ),
+    20 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450300,
+      'read' => 1,
+      'write' => 1,
+      'size' => '4513',
+      'hash' => 'l1_d3AtdHJhY2tiYWNrLnBocA',
+      'name' => 'wp-trackback.php',
+      'phash' => 'l1_Lw',
+    ),
+    21 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1494557993,
+      'read' => 1,
+      'write' => 1,
+      'size' => '72',
+      'hash' => 'l1_cm9ib3RzLnR4dA',
+      'name' => 'robots.txt',
+      'phash' => 'l1_Lw',
+    ),
+    22 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtaW5jbHVkZXM',
+      'name' => 'wp-includes',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    23 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '16200',
+      'hash' => 'l1_d3Atc2V0dGluZ3MucGhw',
+      'name' => 'wp-settings.php',
+      'phash' => 'l1_Lw',
+    ),
+    24 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '34327',
+      'hash' => 'l1_d3AtbG9naW4ucGhw',
+      'name' => 'wp-login.php',
+      'phash' => 'l1_Lw',
+    ),
+    25 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500397655,
+      'read' => 1,
+      'write' => 0,
+      'size' => 0,
+      'hash' => 'l1_LmdpdA',
+      'name' => '.git',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    26 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480525321,
+      'read' => 1,
+      'write' => 1,
+      'size' => '20',
+      'hash' => 'l1_ZGIucGhw',
+      'name' => 'db.php',
+      'phash' => 'l1_Lw',
+    ),
+    27 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '2422',
+      'hash' => 'l1_d3AtbGlua3Mtb3BtbC5waHA',
+      'name' => 'wp-links-opml.php',
+      'phash' => 'l1_Lw',
+    ),
+    28 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1495602488,
+      'read' => 1,
+      'write' => 0,
+      'size' => '34949630',
+      'hash' => 'l1_ZGJfYmFja3VwLnNxbA',
+      'name' => 'db_backup.sql',
+      'phash' => 'l1_Lw',
+    ),
+    29 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '3065',
+      'hash' => 'l1_eG1scnBjLnBocA',
+      'name' => 'xmlrpc.php',
+      'phash' => 'l1_Lw',
+    ),
+    30 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '1627',
+      'hash' => 'l1_d3AtY29tbWVudHMtcG9zdC5waHA',
+      'name' => 'wp-comments-post.php',
+      'phash' => 'l1_Lw',
+    ),
+    31 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450875,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudA',
+      'name' => 'wp-content',
+      'phash' => 'l1_Lw',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    32 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/plain',
+      'ts' => 1498216975,
+      'read' => 1,
+      'write' => 1,
+      'size' => '26',
+      'hash' => 'l1_cGhwNS5pbmk',
+      'name' => 'php5.ini',
+      'phash' => 'l1_Lw',
+    ),
+    33 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => '8048',
+      'hash' => 'l1_d3AtbWFpbC5waHA',
+      'name' => 'wp-mail.php',
+      'phash' => 'l1_Lw',
+    ),
+  ),
+  'api' => '2.1',
+  'uplMaxSize' => '2M',
+  'uplMaxFile' => '20',
+  'netDrivers' => 
+  array (
+  ),
+  'maxTargets' => 1000,
+) 
+[Wed, 19 Jul 2017 07:59:26 +0000] OPEN: array (
+  'cwd' => 
+  array (
+    'isowner' => false,
+    'ts' => 1500450875,
+    'mime' => 'directory',
+    'read' => 1,
+    'write' => 1,
+    'size' => 0,
+    'hash' => 'l1_d3AtY29udGVudA',
+    'name' => 'wp-content',
+    'phash' => 'l1_Lw',
+    'volumeid' => 'l1_',
+    'dirs' => 1,
+  ),
+  'options' => 
+  array (
+    'path' => 'news/wp-content',
+    'url' => 'http://updatepunjab.com/',
+    'tmbUrl' => 'http://updatepunjab.com/.tmb/',
+    'disabled' => 
+    array (
+      0 => 'chmod',
+    ),
+    'separator' => '/',
+    'copyOverwrite' => 1,
+    'uploadOverwrite' => 1,
+    'uploadMaxSize' => 9223372036854775807,
+    'uploadMaxConn' => 3,
+    'uploadMime' => 
+    array (
+      'firstOrder' => 'allow',
+      'allow' => 
+      array (
+        0 => 'text',
+        1 => 'image',
+        2 => 'video',
+        3 => 'audio',
+        4 => 'application',
+        5 => 'model',
+        6 => 'chemical',
+        7 => 'x-conference',
+        8 => 'message',
+      ),
+      'deny' => 
+      array (
+      ),
+    ),
+    'dispInlineRegex' => '^(?:(?:image|text)|application/x-shockwave-flash$)',
+    'jpgQuality' => 100,
+    'archivers' => 
+    array (
+      'create' => 
+      array (
+        0 => 'application/x-tar',
+        1 => 'application/x-gzip',
+        2 => 'application/x-bzip2',
+        3 => 'application/x-xz',
+      ),
+      'extract' => 
+      array (
+        0 => 'application/x-tar',
+        1 => 'application/x-gzip',
+        2 => 'application/x-bzip2',
+        3 => 'application/x-xz',
+      ),
+      'createext' => 
+      array (
+        'application/x-tar' => 'tar',
+        'application/x-gzip' => 'tgz',
+        'application/x-bzip2' => 'tbz',
+        'application/x-xz' => 'xz',
+      ),
+    ),
+    'uiCmdMap' => 
+    array (
+    ),
+    'syncChkAsTs' => 1,
+    'syncMinMs' => 10000,
+    'i18nFolderName' => 0,
+    'tmbCrop' => 1,
+  ),
+  'files' => 
+  array (
+    0 => 
+    array (
+      'isowner' => false,
+      'mime' => 'text/x-php',
+      'ts' => 1480526485,
+      'read' => 1,
+      'write' => 1,
+      'size' => '28',
+      'hash' => 'l1_d3AtY29udGVudC9pbmRleC5waHA',
+      'name' => 'index.php',
+      'phash' => 'l1_d3AtY29udGVudA',
+    ),
+    1 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450768,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudC91cGxvYWRz',
+      'name' => 'uploads',
+      'phash' => 'l1_d3AtY29udGVudA',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    2 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450761,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudC9wbHVnaW5z',
+      'name' => 'plugins',
+      'phash' => 'l1_d3AtY29udGVudA',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    3 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450761,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudC91cGdyYWRl',
+      'name' => 'upgrade',
+      'phash' => 'l1_d3AtY29udGVudA',
+      'volumeid' => 'l1_',
+    ),
+    4 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1482938294,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudC9yZXBvcnRz',
+      'name' => 'reports',
+      'phash' => 'l1_d3AtY29udGVudA',
+      'volumeid' => 'l1_',
+    ),
+    5 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1500450301,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudC90aGVtZXM',
+      'name' => 'themes',
+      'phash' => 'l1_d3AtY29udGVudA',
+      'volumeid' => 'l1_',
+      'dirs' => 1,
+    ),
+    6 => 
+    array (
+      'isowner' => false,
+      'mime' => 'directory',
+      'ts' => 1482938294,
+      'read' => 1,
+      'write' => 1,
+      'size' => 0,
+      'hash' => 'l1_d3AtY29udGVudC9iYW5uZXJz',
+      'name' => 'banners',
+      'phash' => 'l1_d3AtY29udGVudA',
+      'volumeid' => 'l1_',
+    ),
+  ),
+) 

@@ -1,12 +1,16 @@
 <?php
 
-/***** MH Posts Large (Homepage) Widget *****/
+/***** MH Posts Large *****/
 
 class mh_newsdesk_lite_posts_large extends WP_Widget {
     function __construct() {
 		parent::__construct(
 			'mh_newsdesk_lite_posts_large', esc_html_x('MH Posts Large [lite]', 'widget name', 'mh-newsdesk-lite'),
-			array('mh_newsdesk_lite_posts_large' => 'mh_affiliate', 'description' => esc_html__('Display post with large image on front page for use in "Home 1" or "Home 4" widget areas.', 'mh-newsdesk-lite'))
+			array(
+				'classname' => 'mh_newsdesk_lite_posts_large',
+				'description' => esc_html__('Display post with large image on front page for use in "Home 1" or "Home 4" widget areas.', 'mh-newsdesk-lite'),
+				'customize_selective_refresh' => true
+			)
 		);
 	}
     function widget($args, $instance) {

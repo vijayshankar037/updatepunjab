@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -166,7 +166,7 @@ function adrotate_filter_schedule($selected, $banner) {
 	}
 	
 	// Get schedules for advert
-	$schedules = $wpdb->get_results("SELECT `".$wpdb->prefix."adrotate_schedule`.`id`, `starttime`, `stoptime`, `maxclicks`, `maximpressions` FROM `".$wpdb->prefix."adrotate_schedule`, `".$wpdb->prefix."adrotate_linkmeta` WHERE `schedule` = `".$wpdb->prefix."adrotate_schedule`.`id` AND `ad` = '".$banner->id."' ORDER BY `starttime` ASC LIMIT 1;");
+	$schedules = $wpdb->get_results("SELECT `{$wpdb->prefix}adrotate_schedule`.`id`, `starttime`, `stoptime`, `maxclicks`, `maximpressions` FROM `{$wpdb->prefix}adrotate_schedule`, `{$wpdb->prefix}adrotate_linkmeta` WHERE `schedule` = `{$wpdb->prefix}adrotate_schedule`.`id` AND `ad` = '".$banner->id."' ORDER BY `starttime` ASC LIMIT 1;");
 	$schedule = $schedules[0];
 	
 	if($adrotate_debug['general'] == true) {
@@ -278,8 +278,10 @@ function adrotate_select_categories($savedcats, $count = 2, $child_of = 0, $pare
 	if(!empty($categories)) {
 		$output = '';
 		if($parent == 0) {
-			$output = '<table width="100%">';
-			$output .= '<thead><tr><td scope="col" class="manage-column check-column" style="padding: 0px;"><input type="checkbox" /></td><td style="padding: 0px;">Select All</td></tr></thead>';
+			$output .= '<table width="100%">';
+			$output .= '<thead>';
+			$output .= '<tr><td class="check-column" style="padding: 0px;"><input type="checkbox" /></td><td style="padding: 0px;">Select All</td></tr>';
+			$output .= '</thead>';
 			$output .= '<tbody>';
 		}
 		foreach($categories as $category) {
@@ -292,11 +294,11 @@ function adrotate_select_categories($savedcats, $count = 2, $child_of = 0, $pare
 				$indent = '';
 			}
 			$output .= '<tr>';
-			$output .= '<th class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_categories[]" value="'.$category->cat_ID.'"';
-			if(in_array($category->cat_ID, $savedcats)) {
-				$output .= ' checked';
-			}
-			$output .= '></th><td style="padding: 0px;">'.$indent.$category->name.' ('.$category->category_count.')</td>';
+
+			$output .= '<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_categories[]" value="'.$category->cat_ID.'"';
+			$output .= (in_array($category->cat_ID, $savedcats)) ? ' checked' : '';
+			$output .= '></td><td style="padding: 0px;">'.$indent.$category->name.' ('.$category->category_count.')</td>';
+
 			$output .= '</tr>';
 			$output .= adrotate_select_categories($savedcats, $count, $category->parent, $category->cat_ID);
 			$child_of = $parent;
@@ -325,7 +327,7 @@ function adrotate_select_pages($savedpages, $count = 2, $child_of = 0, $parent =
 		if($parent == 0) {
 			$output = '<table width="100%">';
 			if(count($pages) > 5) {
-				$output .= '<thead><tr><td scope="col" class="manage-column check-column" style="padding: 0px;"><input type="checkbox" /></td><td style="padding: 0px;">Select All</td></tr></thead>';
+				$output .= '<thead><tr><td class="check-column" style="padding: 0px;"><input type="checkbox" /></td><td style="padding: 0px;">Select All</td></tr></thead>';
 			}
 			$output .= '<tbody>';
 		}
@@ -339,11 +341,11 @@ function adrotate_select_pages($savedpages, $count = 2, $child_of = 0, $parent =
 				$indent = '';
 			}
 			$output .= '<tr>';
-			$output .= '<th class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_pages[]" value="'.$page->ID.'"';
+			$output .= '<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_pages[]" value="'.$page->ID.'"';
 			if(in_array($page->ID, $savedpages)) {
 				$output .= ' checked';
 			}
-			$output .= '></th><td style="padding: 0px;">'.$indent.$page->post_title.'</td>';
+			$output .= '></td><td style="padding: 0px;">'.$indent.$page->post_title.'</td>';
 			$output .= '</tr>';
 			$output .= adrotate_select_pages($savedpages, $count, $page->post_parent, $page->ID);
 			$child_of = $parent;
@@ -367,7 +369,7 @@ function adrotate_prepare_evaluate_ads($return = true) {
 	global $wpdb;
 	
 	// Fetch ads
-	$ads = $wpdb->get_results("SELECT `id` FROM `".$wpdb->prefix."adrotate` WHERE `type` != 'disabled' AND `type` != 'empty' ORDER BY `id` ASC;");
+	$ads = $wpdb->get_results("SELECT `id` FROM `{$wpdb->prefix}adrotate` WHERE `type` != 'disabled' AND `type` != 'empty' ORDER BY `id` ASC;");
 
 	// Determine error states
 	$error = $expired = $expiressoon = $normal = $unknown = 0;
@@ -375,27 +377,27 @@ function adrotate_prepare_evaluate_ads($return = true) {
 		$result = adrotate_evaluate_ad($ad->id);
 		if($result == 'error') {
 			$error++;
-			$wpdb->query("UPDATE `".$wpdb->prefix."adrotate` SET `type` = 'error' WHERE `id` = '".$ad->id."';");
+			$wpdb->query("UPDATE `{$wpdb->prefix}adrotate` SET `type` = 'error' WHERE `id` = '".$ad->id."';");
 		} 
 
 		if($result == 'expired') {
 			$expired++;
-			$wpdb->query("UPDATE `".$wpdb->prefix."adrotate` SET `type` = 'expired' WHERE `id` = '".$ad->id."';");
+			$wpdb->query("UPDATE `{$wpdb->prefix}adrotate` SET `type` = 'expired' WHERE `id` = '".$ad->id."';");
 		} 
 		
 		if($result == '2days') {
 			$expiressoon++;
-			$wpdb->query("UPDATE `".$wpdb->prefix."adrotate` SET `type` = '2days' WHERE `id` = '".$ad->id."';");
+			$wpdb->query("UPDATE `{$wpdb->prefix}adrotate` SET `type` = '2days' WHERE `id` = '".$ad->id."';");
 		}
 		
 		if($result == '7days') {
 			$normal++;
-			$wpdb->query("UPDATE `".$wpdb->prefix."adrotate` SET `type` = '7days' WHERE `id` = '".$ad->id."';");
+			$wpdb->query("UPDATE `{$wpdb->prefix}adrotate` SET `type` = '7days' WHERE `id` = '".$ad->id."';");
 		}
 		
 		if($result == 'active') {
 			$normal++;
-			$wpdb->query("UPDATE `".$wpdb->prefix."adrotate` SET `type` = 'active' WHERE `id` = '".$ad->id."';");
+			$wpdb->query("UPDATE `{$wpdb->prefix}adrotate` SET `type` = 'active' WHERE `id` = '".$ad->id."';");
 		}
 		
 		if($result == 'unknown') {
@@ -437,9 +439,9 @@ function adrotate_evaluate_ad($ad_id) {
 	$in7days = $now + 604800;
 
 	// Fetch ad
-	$ad = $wpdb->get_row($wpdb->prepare("SELECT `id`, `bannercode`, `tracker`, `imagetype`, `image`, `responsive` FROM `".$wpdb->prefix."adrotate` WHERE `id` = %d;", $ad_id));
-	$stoptime = $wpdb->get_var("SELECT `stoptime` FROM `".$wpdb->prefix."adrotate_schedule`, `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = '".$ad->id."' AND `schedule` = `".$wpdb->prefix."adrotate_schedule`.`id` ORDER BY `stoptime` DESC LIMIT 1;");
-	$schedules = $wpdb->get_var("SELECT COUNT(`schedule`) FROM `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = '".$ad->id."' AND `group` = 0 AND `user` = 0;");
+	$ad = $wpdb->get_row($wpdb->prepare("SELECT `id`, `bannercode`, `tracker`, `imagetype`, `image`, `responsive` FROM `{$wpdb->prefix}adrotate` WHERE `id` = %d;", $ad_id));
+	$stoptime = $wpdb->get_var("SELECT `stoptime` FROM `{$wpdb->prefix}adrotate_schedule`, `{$wpdb->prefix}adrotate_linkmeta` WHERE `ad` = '{$ad->id}' AND `schedule` = `{$wpdb->prefix}adrotate_schedule`.`id` ORDER BY `stoptime` DESC LIMIT 1;");
+	$schedules = $wpdb->get_var("SELECT COUNT(`schedule`) FROM `{$wpdb->prefix}adrotate_linkmeta` WHERE `ad` = '".$ad->id."' AND `group` = 0 AND `user` = 0;");
 
 	$bannercode = stripslashes(htmlspecialchars_decode($ad->bannercode, ENT_QUOTES));
 	// Determine error states
@@ -448,6 +450,7 @@ function adrotate_evaluate_ad($ad_id) {
 		OR (!preg_match_all('/<(a|script|embed|iframe)[^>](.*?)>/i', $bannercode, $things) AND $ad->tracker == 'Y') // Clicktracking active but no valid link/tag present
 		OR (preg_match_all("/(%image%|%asset%)/i", $bannercode, $things) AND $ad->image == '' AND $ad->imagetype == '') // Did use %image% but didn't select an image
 		OR (!preg_match_all("/(%image%|%asset%)/i", $bannercode, $things) AND $ad->image != '' AND $ad->imagetype != '') // Didn't use %image% but selected an image
+		OR ($ad->responsive == 'Y') // Uses Responsive feature
 		OR (($ad->image == '' AND $ad->imagetype != '') OR ($ad->image != '' AND $ad->imagetype == '')) // Image and Imagetype mismatch
 		OR $schedules == 0 // No Schedules for this ad
 	) {
@@ -507,14 +510,14 @@ function adrotate_ad_is_in_groups($id) {
 	$output = '';
 	$groups	= $wpdb->get_results("
 		SELECT 
-			`".$wpdb->prefix."adrotate_groups`.`name` 
+			`{$wpdb->prefix}adrotate_groups`.`name` 
 		FROM 
-			`".$wpdb->prefix."adrotate_groups`, 
-			`".$wpdb->prefix."adrotate_linkmeta` 
+			`{$wpdb->prefix}adrotate_groups`, 
+			`{$wpdb->prefix}adrotate_linkmeta` 
 		WHERE 
-			`".$wpdb->prefix."adrotate_linkmeta`.`ad` = '".$id."'
-			AND `".$wpdb->prefix."adrotate_linkmeta`.`group` = `".$wpdb->prefix."adrotate_groups`.`id`
-			AND `".$wpdb->prefix."adrotate_linkmeta`.`user` = 0
+			`{$wpdb->prefix}adrotate_linkmeta`.`ad` = '".$id."'
+			AND `{$wpdb->prefix}adrotate_linkmeta`.`group` = `{$wpdb->prefix}adrotate_groups`.`id`
+			AND `{$wpdb->prefix}adrotate_linkmeta`.`user` = 0
 		;");
 	if($groups) {
 		foreach($groups as $group) {
@@ -685,7 +688,7 @@ function adrotate_folder_contents($current) {
 	// Read Banner folder
 	$files = array();
 	$i = 0;
-	if($handle = opendir(ABSPATH.$adrotate_config['banner_folder'])) {
+	if($handle = opendir(WP_CONTENT_DIR."/".$adrotate_config['banner_folder'])) {
 	    while (false !== ($file = readdir($handle))) {
 	        if ($file != "." AND $file != ".." AND $file != "index.php") {
 	            $files[] = $file;
@@ -711,7 +714,7 @@ function adrotate_folder_contents($current) {
 					)
 				) {
 				    $output .= "<option value='".$file."'";
-				    if(($current == $siteurl.'/wp-content/banners/'.$file) OR ($current == $siteurl."/%folder%".$file)) { $output .= "selected"; }
+				    if(($current == WP_CONTENT_URL.'/banners/'.$file) OR ($current == WP_CONTENT_URL."/%folder%/".$file)) { $output .= "selected"; }
 				    $output .= ">".$file."</option>";
 				}
 			}
@@ -727,14 +730,10 @@ function adrotate_folder_contents($current) {
 
 /*-------------------------------------------------------------
  Name:      adrotate_return
-
  Purpose:   Internal redirects
- Receive:   $action, $arg (array)
- Return:    -none-
  Since:		3.12
 -------------------------------------------------------------*/
 function adrotate_return($page, $status, $args = null) {
-
 	if(strlen($page) > 0 AND ($status > 0 AND $status < 1000)) {
 		$defaults = array(
 			'status' => $status
@@ -746,14 +745,12 @@ function adrotate_return($page, $status, $args = null) {
 	}
 
 	wp_redirect($redirect);
+	exit;
 }
 
 /*-------------------------------------------------------------
  Name:      adrotate_status
-
  Purpose:   Internal redirects
- Receive:   $status, $args
- Return:    -none-
  Since:		3.12
 -------------------------------------------------------------*/
 function adrotate_status($status, $args = null) {
@@ -804,7 +801,7 @@ function adrotate_status($status, $args = null) {
 		break;
 
 		case '215' :
-			echo '<div id="message" class="updated"><p>'. __('Export created', 'adrotate') .'. <a href="' . WP_CONTENT_URL . '/reports/'.$arguments['file'].'">Download</a>.</p></div>';
+			echo '<div id="message" class="updated"><p>'. __('Export created', 'adrotate-pro') .'. <a href="' . WP_CONTENT_URL . '/reports/'.$arguments['file'].'">Download</a>.</p></div>';
 		break;
 
 		// Settings
@@ -825,7 +822,7 @@ function adrotate_status($status, $args = null) {
 		break;
 
 		case '406' :
-			echo '<div id="message" class="updated"><p>'. __('Empty database records removed', 'adrotate') .'</p></div>';
+			echo '<div id="message" class="updated"><p>'. __('Cleanup complete', 'adrotate-pro') .'</p></div>';
 		break;
 
 		// (all) Error messages

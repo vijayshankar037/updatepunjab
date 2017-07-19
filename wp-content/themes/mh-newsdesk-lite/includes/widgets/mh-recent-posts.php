@@ -1,12 +1,16 @@
 <?php
 
-/***** MH Recent Posts Widget *****/
+/***** MH Recent Posts *****/
 
 class mh_newsdesk_lite_recent_posts extends WP_Widget {
     function __construct() {
 		parent::__construct(
 			'mh_newsdesk_lite_recent_posts', esc_html_x('MH Recent Posts', 'widget name', 'mh-newsdesk-lite'),
-			array('mh_newsdesk_lite_recent_posts' => 'mh_affiliate', 'description' => esc_html__('Display a list of most recent posts.', 'mh-newsdesk-lite'))
+			array(
+				'classname' => 'mh_newsdesk_lite_recent_posts',
+				'description' => esc_html__('Display a list of most recent posts.', 'mh-newsdesk-lite'),
+				'customize_selective_refresh' => true
+			)
 		);
 	}
     function widget($args, $instance) {

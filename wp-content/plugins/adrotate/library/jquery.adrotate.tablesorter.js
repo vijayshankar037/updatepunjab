@@ -1,6 +1,6 @@
 /*
 Tablesorter settings/directives
-Arnan de Gans (http://meandmymac.net, https://ajdg.solutions/)
+Arnan de Gans (http://www.arnan.me)
 Version: 1.0
 With help from: N/a
 Original code: Tablesorter docs
@@ -8,7 +8,7 @@ Original code: Tablesorter docs
  
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -20,14 +20,13 @@ jQuery(function() {
 	jQuery("table.manage-ads-main").tablesorter({
 		headers: {
 			4: { sorter: false },
-			5: { sorter: false },
 			6: { sorter: false },
 			7: { sorter: false },
-			8: { sorter: false },
 		}
 	});
 	jQuery("table.manage-ads-disabled").tablesorter({
 		headers: {
+			1: { sorter: false },
 			3: { sorter: false },
 			4: { sorter: false },
 			5: { sorter: false },

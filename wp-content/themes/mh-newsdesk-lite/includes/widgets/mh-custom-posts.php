@@ -1,12 +1,16 @@
 <?php
 
-/***** MH Custom Posts Widget *****/
+/***** MH Custom Posts *****/
 
 class mh_newsdesk_lite_custom_posts extends WP_Widget {
     function __construct() {
 		parent::__construct(
 			'mh_newsdesk_lite_custom_posts', esc_html_x('MH Custom Posts [lite]', 'widget name', 'mh-newsdesk-lite'),
-			array('mh_newsdesk_lite_custom_posts' => 'mh_affiliate', 'description' => esc_html__('Display posts from any category.', 'mh-newsdesk-lite'))
+			array(
+				'classname' => 'mh_newsdesk_lite_custom_posts',
+				'description' => esc_html__('Display posts from any category.', 'mh-newsdesk-lite'),
+				'customize_selective_refresh' => true
+			)
 		);
 	}
     function widget($args, $instance) {

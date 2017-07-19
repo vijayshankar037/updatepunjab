@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -12,10 +12,10 @@
 if(!$ad_edit_id) {
 	$edit_id = $wpdb->get_var("SELECT `id` FROM `{$wpdb->prefix}adrotate` WHERE `type` = 'empty' ORDER BY `id` DESC LIMIT 1;");
 	if($edit_id == 0) {
-	    $wpdb->insert($wpdb->prefix."adrotate", array('title' => '', 'bannercode' => '', 'thetime' => $now, 'updated' => $now, 'author' => $userdata->user_login, 'imagetype' => 'dropdown', 'image' => '', 'paid' => 'U', 'tracker' => 'N', 'desktop' => 'Y', 'mobile' => 'Y', 'tablet' => 'Y', 'os_ios' => 'Y', 'os_android' => 'Y', 'os_other' => 'Y', 'responsive' => 'N', 'type' => 'empty', 'weight' => 6, 'budget' => 0, 'crate' => 0, 'irate' => 0, 'cities' => serialize(array()), 'countries' => serialize(array())));
+	    $wpdb->insert($wpdb->prefix."adrotate", array('title' => '', 'bannercode' => '', 'thetime' => $now, 'updated' => $now, 'author' => $userdata->user_login, 'imagetype' => 'dropdown', 'image' => '', 'paid' => 'U', 'tracker' => 'N', 'desktop' => 'Y', 'mobile' => 'Y', 'tablet' => 'Y', 'os_ios' => 'Y', 'os_android' => 'Y', 'os_other' => 'Y', 'responsive' => 'N', 'type' => 'empty', 'weight' => 6, 'autodelete' => 'N', 'budget' => 0, 'crate' => 0, 'irate' => 0, 'cities' => serialize(array()), 'countries' => serialize(array())));
 	    $edit_id = $wpdb->insert_id;
 
-		$wpdb->insert($wpdb->prefix.'adrotate_schedule', array('name' => 'Schedule for ad '.$edit_id, 'starttime' => $now, 'stoptime' => $in84days, 'maxclicks' => 0, 'maximpressions' => 0, 'spread' => 'N', 'hourimpressions' => 0, 'daystarttime' => '0000', 'daystoptime' => '0000', 'day_mon' => 'Y', 'day_tue' => 'Y', 'day_wed' => 'Y', 'day_thu' => 'Y', 'day_fri' => 'Y', 'day_sat' => 'Y', 'day_sun' => 'Y'));
+		$wpdb->insert($wpdb->prefix.'adrotate_schedule', array('name' => 'Schedule for ad '.$edit_id, 'starttime' => $now, 'stoptime' => $in84days, 'maxclicks' => 0, 'maximpressions' => 0, 'spread' => 'N', 'daystarttime' => '0000', 'daystoptime' => '0000', 'day_mon' => 'Y', 'day_tue' => 'Y', 'day_wed' => 'Y', 'day_thu' => 'Y', 'day_fri' => 'Y', 'day_sat' => 'Y', 'day_sun' => 'Y', 'autodelete' => 'N'));
 	    $schedule_id = $wpdb->insert_id;
 		$wpdb->insert($wpdb->prefix.'adrotate_linkmeta', array('ad' => $edit_id, 'group' => 0, 'user' => 0, 'schedule' => $schedule_id));
 	}
@@ -33,12 +33,13 @@ wp_enqueue_script('uploader-hook', plugins_url().'/adrotate/library/uploader-hoo
 list($sday, $smonth, $syear, $shour, $sminute) = explode(" ", date("d m Y H i", $schedules->starttime));
 list($eday, $emonth, $eyear, $ehour, $eminute) = explode(" ", date("d m Y H i", $schedules->stoptime));
 
-$meta_array = '';
+$meta_array = array();
 foreach($linkmeta as $meta) {
 	$meta_array[] = $meta->group;
 }
 
-if(!is_array($meta_array)) $meta_array = array();
+// Random banner for Media.net
+$partner = mt_rand(1,3);
 
 if($ad_edit_id) {
 	if($edit_banner->type != 'empty') {
@@ -74,6 +75,10 @@ if($ad_edit_id) {
 
 		if($edit_banner->type == 'disabled') 
 			echo '<div class="updated"><p>'. __('This ad has been disabled and does not rotate on your site!', 'adrotate').'</p></div>';
+
+		// Depreciated stuff
+		if($edit_banner->responsive == 'Y') 
+			echo '<div class="error"><p>'. __('This advert uses the obsolete Responsive feature. Please use the more reliable Mobile feature! Saving the advert will disable the responsive option silently.', 'adrotate').'</p></div>';
 	}
 }
 
@@ -121,10 +126,8 @@ if($edit_banner->imagetype == "field") {
 				<p><em><a href="#" onclick="textatcursor('adrotate_bannercode','&lt;a href=&quot;https://ajdg.solutions/&quot;&gt;&lt;img src=&quot;%asset%&quot; /&gt;&lt;/a&gt;');return false;">&lt;a href="https://ajdg.solutions/"&gt;&lt;img src="%asset%" /&gt;&lt;/a&gt;</a></em></p>
 		        <p><em><a href="#" onclick="textatcursor('adrotate_bannercode','&lt;iframe src=&quot;%asset%&quot; height=&quot;250&quot; frameborder=&quot;0&quot; style=&quot;border:none;&quot;&gt;&lt;/iframe&gt;');return false;">&lt;iframe src=&quot;%asset%&quot; height=&quot;250&quot; frameborder=&quot;0&quot; style=&quot;border:none;&quot;&gt;&lt;/iframe&gt;</a></em></p>
 
-		        <p><strong><?php _e('Get paid as a publisher:', 'adrotate'); ?></strong></p>
-		        <p><a href="http://signup.clicksor.com/advertise_here.php?nid=1&srid=&ref=381832" target="_blank"><img alt="Clicksor" height="125" width="125" src="<?php echo plugins_url('../../images/clicksor.png', __FILE__); ?>"></a>&nbsp;&nbsp;<a href="https://www.viglink.com/?vgref=2984797&amp;vgtag=banner">
-  <img alt="VigLink" height="125" width="125" src="<?php echo plugins_url('../../images/viglink.png', __FILE__); ?>" />
-</a></p>
+		        <p><strong><?php _e('Get better adverts from Media.net', 'adrotate'); ?></strong></p>
+		        <p><a href="http://ajdg.link/medianet" target="_blank"><img src="<?php echo plugins_url("../images/medianet-small-$partner.jpg", dirname(__FILE__)); ?>" width="250" /></a></p>
 	        </td>
      	</tr>
       	<tr>
@@ -290,7 +293,7 @@ if($edit_banner->imagetype == "field") {
 	</p>
 
 	<h2><?php _e('Advanced', 'adrotate'); ?></h2>
-	<p><em><?php _e('Everything below is optional.', 'adrotate'); ?> <?php _e('Available in AdRotate Pro!', 'adrotate'); ?></em></p>
+	<p><em><?php _e('Available in AdRotate Pro!', 'adrotate'); ?></em></p>
 	<table class="widefat" style="margin-top: .5em">
 
 		<tbody>
@@ -334,7 +337,7 @@ if($edit_banner->imagetype == "field") {
 	        	<label for="adrotate_tablet"><center><input disabled type="checkbox" name="adrotate_tablet" checked="1" /><br /><?php _e('Tablets', 'adrotate'); ?></center></label>
 	        </td>
 	        <td colspan="2" rowspan="2">
-	        	<em><?php _e('Also enable mobile support in the group this advert goes in or these are ignored.', 'adrotate-pro'); ?><br /><?php _e('Operating system detection only detects iOS/Android/Others or neither. Only works if Smartphones and/or Tablets is enabled.', 'adrotate-pro'); ?></em>
+	        	<em><?php _e('Also enable mobile support in the group this advert goes in or these are ignored.', 'adrotate'); ?><br /><?php _e('Operating system detection only detects iOS/Android/Other or neither.', 'adrotate'); ?></em>
 	        </td>
 		</tr>
      	<tr>
@@ -353,48 +356,75 @@ if($edit_banner->imagetype == "field") {
 	</table>
 	<center><?php _e('With AdRotate Pro you can easily select which devices and mobile operating systems the advert should show on!', 'adrotate'); ?>  <a href="admin.php?page=adrotate-pro"><?php _e('Upgrade today', 'adrotate'); ?></a>!</center>
 
-	<h3><?php _e('Geo Targeting in AdRotate Pro', 'adrotate'); ?></h3>
-	<p><em><?php _e('Assign the advert to a group and enable that group to use Geo Targeting.', 'adrotate'); ?></em></p>
-	<table class="widefat" style="margin-top: .5em">			
-		<tbody>
-	    <tr>
-			<th width="15%" valign="top"><?php _e('Cities/States', 'adrotate'); ?></strong></th>
-			<td colspan="2">
-				<textarea name="adrotate_geo_cities" cols="85" rows="3" disabled>Amsterdam, Noord Holland, New York, California, Tokyo, London</textarea><br />
-		        <p><em><?php _e('A comma separated list of cities (or the Metro ID) and/or states (Also the states ISO codes are supported)', 'adrotate'); ?> (Alkmaar, Philadelphia, Melbourne, ...)<br /><?php _e('AdRotate does not check the validity of names so make sure you spell them correctly!', 'adrotate'); ?></em></p>
-			</td>
-		</tr>
-	    <tr>
-			<th valign="top"><?php _e('Countries', 'adrotate'); ?></strong></th>
-	        <td colspan="2">
-		        <label for="adrotate_geo_countries">
-			        <div class="adrotate-select">
-						<table width="100%">
-							<tbody>
-							<tr>
-								<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">United States</td>
-							</tr>
-							<tr>
-								<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Australia</td>
-							</tr>
-							<tr>
-								<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Germany</td>
-							</tr>
-							<tr>
-								<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Brazil</td>
-							</tr>
-							<tr>
-								<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Japan</td>
-							</tr>
-							</tbody>
-						</table>
+	<h2><?php _e('Geo Targeting', 'adrotate-pro'); ?></h2>
+	<p><em><?php _e('Assign the advert to a group and enable that group to use Geo Targeting.', 'adrotate-pro'); ?> <?php _e('Available in AdRotate Pro!', 'adrotate'); ?></em></p>
+
+	<div id="dashboard-widgets-wrap">
+		<div id="dashboard-widgets" class="metabox-holder">
+	
+			<div id="postbox-container-1" class="postbox-container" style="width:50%;">
+				<div class="meta-box-sortables">
+					
+					<div class="postbox-ajdg">
+						<div class="inside">
+							<p><strong>Select Countries and or Regions</strong></p>
+							<div class="adrotate-select">
+								<table width="100%">
+									<tbody>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">United States</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Australia</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Germany</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Brazil</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Japan</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Netherlands</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Mexico</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">Canada</td>
+									</tr>
+									<tr>
+										<td class="check-column" style="padding: 0px;"><input type="checkbox" name="adrotate_geo_countries[]" value="" disabled></td><td style="padding: 0px;">South Africa</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
-		        </label>
-		        <p><em><?php _e('Select the countries you want the adverts to show in.', 'adrotate'); ?> <?php _e('Cities take priority and will be filtered first.', 'adrotate'); ?></em></p>
-			</td>
-		</tr>
-		</tbody>
-	</table>
+	
+				</div>
+			</div>
+
+			<div id="postbox-container-3" class="postbox-container" style="width:50%;">
+				<div class="meta-box-sortables">
+							
+					<div class="postbox-ajdg">
+						<div class="inside">
+
+							<p><strong>Enter cities, metro IDs, States or State ISO codes</strong></p>
+							<textarea name="adrotate_geo_cities" cols="40" rows="6" disabled>Amsterdam, 29022, Noord Holland, New York, California, Tokyo, London, CA, NY, Ohio</textarea><br />
+							<p><em><?php _e('A comma separated list of items:', 'adrotate-pro'); ?> (Alkmaar, New York, Manila, Tokyo) <?php _e('AdRotate does not check the validity of names so make sure you spell them correctly!', 'adrotate-pro'); ?></em></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+	    </div>
+    </div>
+   	<div class="clear"></div>
 	<center><?php _e('Target your audience with Geo Targeting in AdRotate Pro', 'adrotate'); ?>, <a href="admin.php?page=adrotate-pro"><?php _e('Upgrade today', 'adrotate'); ?></a>.</center>
 
 	<h3><?php _e('Usage', 'adrotate'); ?></h3>

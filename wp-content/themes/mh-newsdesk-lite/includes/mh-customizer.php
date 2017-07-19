@@ -41,9 +41,24 @@ function mh_newsdesk_lite_customize_register($wp_customize) {
 	        		<?php esc_html_e('News ticker and many more...', 'mh-newsdesk-lite'); ?>
 	        	</li>
         	</ul>
-			<p class="mh-upgrade-button">
-				<a href="http://www.mhthemes.com/themes/mh/newsdesk/" target="_blank" class="button button-secondary">
-					<?php esc_html_e('Learn more about MH Newsdesk', 'mh-newsdesk-lite'); ?>
+			<p class="mh-button mh-upgrade-button">
+				<a href="https://www.mhthemes.com/themes/mh/newsdesk/" target="_blank" class="button button-secondary">
+					<?php esc_html_e('Upgrade to MH Newsdesk Pro', 'mh-newsdesk-lite'); ?>
+				</a>
+			</p>
+			<p class="mh-button">
+				<a href="https://www.mhthemes.com/themes/showcase/" target="_blank" class="button button-secondary">
+					<?php esc_html_e('MH Themes Showcase', 'mh-newsdesk-lite'); ?>
+				</a>
+			</p>
+			<p class="mh-button">
+				<a href="https://www.mhthemes.com/support/documentation-mh-newsdesk/" target="_blank" class="button button-secondary">
+					<?php esc_html_e('Theme Documentation', 'mh-newsdesk-lite'); ?>
+				</a>
+			</p>
+			<p class="mh-button">
+				<a href="https://wordpress.org/support/theme/mh-newsdesk-lite" target="_blank" class="button button-secondary">
+					<?php esc_html_e('Support Forum', 'mh-newsdesk-lite'); ?>
 				</a>
 			</p><?php
         }
@@ -132,25 +147,5 @@ function mh_newsdesk_lite_customizer_css() {
 	wp_enqueue_style('mh-customizer', get_template_directory_uri() . '/admin/customizer.css', array());
 }
 add_action('customize_controls_print_styles', 'mh_newsdesk_lite_customizer_css');
-
-/***** Enqueue Customizer JS *****/
-
-function mh_newsdesk_lite_customizer_js() {
-	wp_enqueue_script('mh-customizer', get_template_directory_uri() . '/js/mh-customizer.js', array(), '1.0.0', true);
-	wp_localize_script('mh-customizer', 'mh_newsdesk_lite_links', array(
-		'upgradeURL' => esc_url('http://www.mhthemes.com/themes/mh/newsdesk/'),
-		'upgradeLabel' => esc_html__('Upgrade to MH Newsdesk Pro', 'mh-newsdesk-lite'),
-		'title'	=> esc_html__('Theme Related Links:', 'mh-newsdesk-lite'),
-		'themeURL'	=> esc_url('http://www.mhthemes.com/themes/mh/newsdesk-lite/'),
-		'themeLabel'	=> esc_html__('Theme Info Page', 'mh-newsdesk-lite'),
-		'docsURL'	=> esc_url('http://www.mhthemes.com/support/documentation-mh-newsdesk/'),
-		'docsLabel'	=>  esc_html__('Theme Documentation', 'mh-newsdesk-lite'),
-		'supportURL'	=> esc_url('https://wordpress.org/support/theme/mh-newsdesk-lite'),
-		'supportLabel'	=>  esc_html__('Support Forum', 'mh-newsdesk-lite'),
-		'rateURL'	=> esc_url('https://wordpress.org/support/view/theme-reviews/mh-newsdesk-lite?filter=5'),
-		'rateLabel'	=>  esc_html__('Rate this theme', 'mh-newsdesk-lite'),
-	));
-}
-add_action('customize_controls_enqueue_scripts', 'mh_newsdesk_lite_customizer_js');
 
 ?>

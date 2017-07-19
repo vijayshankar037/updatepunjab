@@ -3,7 +3,7 @@
 .mh-upgrade-thumb img { border: 1px solid #ccc; }
 .mh-upgrade-title { color: #000; text-transform: uppercase; }
 .mh-upgrade-features { list-style: disc; margin: 0 15px; }
-.mh-upgrade-link { position: relative; font-size: 9px; line-height: 1.5; color: #fff; padding: 3px 6px; letter-spacing: 1px; background: #008ec2; text-transform: uppercase; }
-.mh-upgrade-link:hover { color: #fff; }
-.mh-theme-links-wrap { font-size: 14px; padding: 5px 15px 0; }
-.mh-theme-link { display: block; margin-bottom: 5px; }
+.mh-button .button { min-width: 220px; text-align: center; }
+.mh-upgrade-button .button { color: #fff; background: #008ec2; border-color: #008ec2; }
+.customize-pane-parent #accordion-panel-mh_theme_options .accordion-section-title, #accordion-section-mh_newsdesk_lite_upgrade .accordion-section-title { color: #fff; background: #008ec2; border-left: 4px solid #bfdeec; }
+.rtl .customize-pane-parent #accordion-panel-mh_theme_options .accordion-section-title, .rtl #accordion-section-mh_newsdesk_lite_upgrade .accordion-section-title { border-right: 4px solid #bfdeec; border-left: none; }

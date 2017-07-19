@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -190,86 +190,93 @@ if(!is_array($meta_array)) $meta_array = array();
 	</table>
 	<center><?php _e('Set up mobile support and use Geo Targeting in AdRotate Pro', 'adrotate'); ?> <a href="admin.php?page=adrotate-pro"><?php _e('Upgrade today', 'adrotate'); ?></a>.</center>
 	
-   	<h3><?php _e('Post Injection', 'adrotate'); ?></h3>
-   	<table class="widefat" style="margin-top: .5em">
-      	<tr>
-	        <th width="15%"><?php _e('In categories?', 'adrotate'); ?></th>
-	        <td>
-	        <label for="adrotate_cat_location">
-		        <select tabindex="12" name="adrotate_cat_location">
-		        	<option value="0" <?php if($edit_group->cat_loc == 0) { echo 'selected'; } ?>><?php _e('Disabled', 'adrotate'); ?></option>
-		        	<option value="1" <?php if($edit_group->cat_loc == 1) { echo 'selected'; } ?>><?php _e('Before content', 'adrotate'); ?></option>
-		        	<option value="2" <?php if($edit_group->cat_loc == 2) { echo 'selected'; } ?>><?php _e('After content', 'adrotate'); ?></option>
-		        	<option value="3" <?php if($edit_group->cat_loc == 3) { echo 'selected'; } ?>><?php _e('Before and after content', 'adrotate'); ?></option>
-		        	<option value="4" <?php if($edit_group->cat_loc == 4) { echo 'selected'; } ?>><?php _e('Inside the content...', 'adrotate'); ?></option>
-		        </select>
-			</label>
-	        <label for="adrotate_cat_paragraph">
-		        <select tabindex="13" name="adrotate_cat_paragraph">
-		        	<option value="0" <?php if($edit_group->cat_par == 0) { echo 'selected'; } ?>>...</option>
-		        	<option value="99" <?php if($edit_group->cat_par == 99) { echo 'selected'; } ?>><?php _e('after the middle paragraph', 'adrotate'); ?></option>
-		        	<option value="1" <?php if($edit_group->cat_par == 1) { echo 'selected'; } ?>><?php _e('after the 1st paragraph', 'adrotate'); ?></option>
-		        	<option value="2" <?php if($edit_group->cat_par == 2) { echo 'selected'; } ?>><?php _e('after the 2nd paragraph', 'adrotate'); ?></option>
-		        	<option value="3" <?php if($edit_group->cat_par == 3) { echo 'selected'; } ?>><?php _e('after the 3rd paragraph', 'adrotate'); ?></option>
-		        	<option value="4" <?php if($edit_group->cat_par == 4) { echo 'selected'; } ?>><?php _e('after the 4th paragraph', 'adrotate'); ?></option>
-		        	<option value="5" <?php if($edit_group->cat_par == 5) { echo 'selected'; } ?>><?php _e('after the 5th paragraph', 'adrotate'); ?></option>
-		        	<option value="6" <?php if($edit_group->cat_par == 6) { echo 'selected'; } ?>><?php _e('after the 6th paragraph', 'adrotate'); ?></option>
-		        	<option value="7" <?php if($edit_group->cat_par == 7) { echo 'selected'; } ?>><?php _e('after the 7th paragraph', 'adrotate'); ?></option>
-		        	<option value="8" <?php if($edit_group->cat_par == 8) { echo 'selected'; } ?>><?php _e('after the 8th paragraph', 'adrotate'); ?></option>
-		        </select>
-			</label>
-	        </td>
-      	</tr>
-      	<tr>
-	        <th valign="top"><?php _e('Which categories?', 'adrotate'); ?></th>
-	        <td>
-	        <label for="adrotate_categories">
-				<div class="adrotate-select">
-		        <?php echo adrotate_select_categories($edit_group->cat, 0, 0, 0); ?>
-				</div><em><?php _e('Click the categories posts you want the adverts to show in.', 'adrotate'); ?></em>
-	        </label>
-	        </td>
-      	</tr>
-      	<tr>
-	        <th valign="top"><?php _e('In pages?', 'adrotate'); ?></th>
-	        <td>
-	        <label for="adrotate_page_location">
-		        <select tabindex="14" name="adrotate_page_location">
-		        	<option value="0" <?php if($edit_group->page_loc == 0) { echo 'selected'; } ?>><?php _e('Disabled', 'adrotate'); ?></option>
-		        	<option value="1" <?php if($edit_group->page_loc == 1) { echo 'selected'; } ?>><?php _e('Before content', 'adrotate'); ?></option>
-		        	<option value="2" <?php if($edit_group->page_loc == 2) { echo 'selected'; } ?>><?php _e('After content', 'adrotate'); ?></option>
-		        	<option value="3" <?php if($edit_group->page_loc == 3) { echo 'selected'; } ?>><?php _e('Before and after content', 'adrotate'); ?></option>
-		        	<option value="4" <?php if($edit_group->page_loc == 4) { echo 'selected'; } ?>><?php _e('Inside the content...', 'adrotate'); ?></option>
-		        </select>
-			</label>
-	        <label for="adrotate_page_paragraph">
-		        <select tabindex="15" name="adrotate_page_paragraph">
-		        	<option value="0" <?php if($edit_group->page_par == 0) { echo 'selected'; } ?>>...</option>
-		        	<option value="99" <?php if($edit_group->page_par == 99) { echo 'selected'; } ?>><?php _e('after the middle paragraph', 'adrotate'); ?></option>
-		        	<option value="1" <?php if($edit_group->page_par == 1) { echo 'selected'; } ?>><?php _e('after the 1st paragraph', 'adrotate'); ?></option>
-		        	<option value="2" <?php if($edit_group->page_par == 2) { echo 'selected'; } ?>><?php _e('after the 2nd paragraph', 'adrotate'); ?></option>
-		        	<option value="3" <?php if($edit_group->page_par == 3) { echo 'selected'; } ?>><?php _e('after the 3rd paragraph', 'adrotate'); ?></option>
-		        	<option value="4" <?php if($edit_group->page_par == 4) { echo 'selected'; } ?>><?php _e('after the 4th paragraph', 'adrotate'); ?></option>
-		        	<option value="5" <?php if($edit_group->page_par == 5) { echo 'selected'; } ?>><?php _e('after the 5th paragraph', 'adrotate'); ?></option>
-		        	<option value="6" <?php if($edit_group->page_par == 6) { echo 'selected'; } ?>><?php _e('after the 6th paragraph', 'adrotate'); ?></option>
-		        	<option value="7" <?php if($edit_group->page_par == 7) { echo 'selected'; } ?>><?php _e('after the 7th paragraph', 'adrotate'); ?></option>
-		        	<option value="8" <?php if($edit_group->page_par == 8) { echo 'selected'; } ?>><?php _e('after the 8th paragraph', 'adrotate'); ?></option>
-		        </select>
-			</label>
-	        </td>
-      	</tr>
-      	<tr>
-	        <th valign="top"><?php _e('Which pages?', 'adrotate'); ?></th>
-	        <td>
-	        <label for="adrotate_pages">
-		        <div class="adrotate-select">
-		        <?php echo adrotate_select_pages($edit_group->page, 0, 0, 0); ?>
-				</div><em><?php _e('Click the pages you want the adverts to show in.', 'adrotate'); ?></em>
-	        </label>
-	        </td>
-      	</tr>
-		</tbody>
-	</table>
+	<div id="dashboard-widgets-wrap">
+		<div id="dashboard-widgets" class="metabox-holder">
+	
+			<div id="postbox-container-1" class="postbox-container" style="width:50%;">
+				<div class="meta-box-sortables">
+					
+					<h2><?php _e('Post Injection', 'adrotate-pro'); ?></h2>
+					<div class="postbox-ajdg">
+						<div class="inside">
+							<p><label for="adrotate_cat_location">
+							    <select tabindex="18" name="adrotate_cat_location">
+							    	<option value="0" <?php if($edit_group->cat_loc == 0) { echo 'selected'; } ?>><?php _e('Disabled', 'adrotate-pro'); ?></option>
+							    	<option value="5" <?php if($edit_group->cat_loc == 5) { echo 'selected'; } ?>><?php _e('Widget', 'adrotate-pro'); ?></option>
+							    	<option value="1" <?php if($edit_group->cat_loc == 1) { echo 'selected'; } ?>><?php _e('Before content', 'adrotate-pro'); ?></option>
+							    	<option value="2" <?php if($edit_group->cat_loc == 2) { echo 'selected'; } ?>><?php _e('After content', 'adrotate-pro'); ?></option>
+							    	<option value="3" <?php if($edit_group->cat_loc == 3) { echo 'selected'; } ?>><?php _e('Before and after content', 'adrotate-pro'); ?></option>
+							    	<option value="4" <?php if($edit_group->cat_loc == 4) { echo 'selected'; } ?>><?php _e('Inside the content...', 'adrotate-pro'); ?></option>
+							    </select>
+							</label>
+							<label for="adrotate_cat_paragraph">
+							    <select tabindex="19" name="adrotate_cat_paragraph">
+							    	<option value="0" <?php if($edit_group->cat_par == 0) { echo 'selected'; } ?>>...</option>
+							    	<option value="99" <?php if($edit_group->cat_par == 99) { echo 'selected'; } ?>><?php _e('after the middle paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="1" <?php if($edit_group->cat_par == 1) { echo 'selected'; } ?>><?php _e('after the 1st paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="2" <?php if($edit_group->cat_par == 2) { echo 'selected'; } ?>><?php _e('after the 2nd paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="3" <?php if($edit_group->cat_par == 3) { echo 'selected'; } ?>><?php _e('after the 3rd paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="4" <?php if($edit_group->cat_par == 4) { echo 'selected'; } ?>><?php _e('after the 4th paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="5" <?php if($edit_group->cat_par == 5) { echo 'selected'; } ?>><?php _e('after the 5th paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="6" <?php if($edit_group->cat_par == 6) { echo 'selected'; } ?>><?php _e('after the 6th paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="7" <?php if($edit_group->cat_par == 7) { echo 'selected'; } ?>><?php _e('after the 7th paragraph', 'adrotate-pro'); ?></option>
+							    	<option value="8" <?php if($edit_group->cat_par == 8) { echo 'selected'; } ?>><?php _e('after the 8th paragraph', 'adrotate-pro'); ?></option>
+							    </select>
+							</label></p>
+							<p><strong>Select Categories</strong></p>
+							<div class="adrotate-select">
+								<?php echo adrotate_select_categories($edit_group->cat, 0, 0, 0); ?>
+							</div>
+						</div>
+					</div>
+	
+				</div>
+			</div>
+
+			<div id="postbox-container-3" class="postbox-container" style="width:50%;">
+				<div class="meta-box-sortables">
+							
+					<h2><?php _e('Page Injection', 'adrotate-pro'); ?></h2>
+					<div class="postbox-ajdg">
+						<div class="inside">
+							<p><label for="adrotate_page_location">
+						        <select tabindex="20" name="adrotate_page_location">
+						        	<option value="0" <?php if($edit_group->page_loc == 0) { echo 'selected'; } ?>><?php _e('Disabled', 'adrotate-pro'); ?></option>
+						        	<option value="5" <?php if($edit_group->page_loc == 5) { echo 'selected'; } ?>><?php _e('Widget', 'adrotate-pro'); ?></option>
+						        	<option value="1" <?php if($edit_group->page_loc == 1) { echo 'selected'; } ?>><?php _e('Before content', 'adrotate-pro'); ?></option>
+						        	<option value="2" <?php if($edit_group->page_loc == 2) { echo 'selected'; } ?>><?php _e('After content', 'adrotate-pro'); ?></option>
+						        	<option value="3" <?php if($edit_group->page_loc == 3) { echo 'selected'; } ?>><?php _e('Before and after content', 'adrotate-pro'); ?></option>
+						        	<option value="4" <?php if($edit_group->page_loc == 4) { echo 'selected'; } ?>><?php _e('Inside the content...', 'adrotate-pro'); ?></option>
+						        </select>
+							</label>
+					        <label for="adrotate_page_paragraph">
+						        <select tabindex="21" name="adrotate_page_paragraph">
+						        	<option value="0" <?php if($edit_group->page_par == 0) { echo 'selected'; } ?>>...</option>
+						        	<option value="99" <?php if($edit_group->page_par == 99) { echo 'selected'; } ?>><?php _e('after the middle paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="1" <?php if($edit_group->page_par == 1) { echo 'selected'; } ?>><?php _e('after the 1st paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="2" <?php if($edit_group->page_par == 2) { echo 'selected'; } ?>><?php _e('after the 2nd paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="3" <?php if($edit_group->page_par == 3) { echo 'selected'; } ?>><?php _e('after the 3rd paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="4" <?php if($edit_group->page_par == 4) { echo 'selected'; } ?>><?php _e('after the 4th paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="5" <?php if($edit_group->page_par == 5) { echo 'selected'; } ?>><?php _e('after the 5th paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="6" <?php if($edit_group->page_par == 6) { echo 'selected'; } ?>><?php _e('after the 6th paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="7" <?php if($edit_group->page_par == 7) { echo 'selected'; } ?>><?php _e('after the 7th paragraph', 'adrotate-pro'); ?></option>
+						        	<option value="8" <?php if($edit_group->page_par == 8) { echo 'selected'; } ?>><?php _e('after the 8th paragraph', 'adrotate-pro'); ?></option>
+						        </select>
+							</label></p>
+
+							<p><strong>Select Pages</strong></p>
+							<div class="adrotate-select">
+								<?php echo adrotate_select_pages($edit_group->page, 0, 0, 0); ?>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+	    </div>
+    </div>
+   	<div class="clear"></div>
 	
 	<h3><?php _e('Usage', 'adrotate'); ?></h3>
    	<table class="widefat" style="margin-top: .5em">
@@ -320,12 +327,12 @@ if(!is_array($meta_array)) $meta_array = array();
 		<tr>
 			<td scope="col" class="manage-column column-cb check-column"><input type="checkbox" /></td>
 			<th><?php _e('Choose adverts', 'adrotate'); ?></th>
+			<th width="15%"><?php _e('Visible until', 'adrotate'); ?></th>
+			<th width="5%"><center><?php _e('Weight', 'adrotate'); ?></center></th>
 	        <?php if($adrotate_config['stats'] == 1) { ?>
 				<th width="5%"><center><?php _e('Shown', 'adrotate'); ?></center></th>
 				<th width="5%"><center><?php _e('Clicks', 'adrotate'); ?></center></th>
 			<?php } ?>
-			<th width="5%"><center><?php _e('Weight', 'adrotate'); ?></center></th>
-			<th width="15%"><?php _e('Visible until', 'adrotate'); ?></th>
 		</tr>
 		</thead>
 
@@ -340,9 +347,9 @@ if(!is_array($meta_array)) $meta_array = array();
 				}
 
 				$errorclass = '';
-				if($ad->type == 'error') $errorclass = ' row_error';
-				if($stoptime <= $in2days OR $stoptime <= $in7days) $errorclass = ' row_urgent';
-				if($stoptime <= $now) $errorclass = ' row_inactive';
+				if($ad->type == 'error') $errorclass = ' row_yellow';
+				if($stoptime <= $in2days OR $stoptime <= $in7days) $errorclass = ' row_red';
+				if($stoptime <= $now) $errorclass = ' row_blue';
 
 				$class = ('alternate' != $class) ? 'alternate' : '';
 				$class = ($errorclass != '') ? $errorclass : $class;
@@ -350,17 +357,17 @@ if(!is_array($meta_array)) $meta_array = array();
 			    <tr class='<?php echo $class; ?>'>
 					<th class="check-column" width="2%"><input type="checkbox" name="adselect[]" value="<?php echo $ad->id; ?>" <?php if(in_array($ad->id, $meta_array)) echo "checked"; ?> /></th>
 					<td><?php echo $ad->id; ?> - <strong><?php echo stripslashes(html_entity_decode($ad->title)); ?></strong></td>
+					<td><span style="color: <?php echo adrotate_prepare_color($stoptime);?>;"><?php echo date_i18n("F d, Y", $stoptime); ?></span></td>
+					<td><center><?php echo $ad->weight; ?></center></td>
 					<?php if($adrotate_config['stats'] == 1) {
 						if($ad->tracker == 'Y') { ?>
 							<td><center><?php echo $stats['impressions']; ?></center></td>
 							<td><center><?php echo $stats['clicks']; ?></center></td>
 						<?php } else { ?>
-							<td><center>--</center></td>
-							<td><center>--</center></td>
+							<td><center>&hellip;</center></td>
+							<td><center>&hellip;</center></td>
 						<?php } ?>
 					<?php } ?>
-					<td><center><?php echo $ad->weight; ?></center></td>
-					<td><span style="color: <?php echo adrotate_prepare_color($stoptime);?>;"><?php echo date_i18n("F d, Y", $stoptime); ?></span></td>
 				</tr>
 			<?php unset($stats);?>
  			<?php } ?>

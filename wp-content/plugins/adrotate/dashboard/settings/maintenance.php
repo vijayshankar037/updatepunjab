@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -25,11 +25,12 @@
 		</td>
 	</tr>
 	<tr>
-		<th valign="top"><?php _e('Clean-up Database', 'adrotate'); ?></th>
+		<th valign="top"><?php _e('Clean-up Database and Files', 'adrotate'); ?></th>
 		<td>
-			<input type="submit" id="post-role-submit" name="adrotate_db_cleanup_submit" value="<?php _e('Clean-up Database', 'adrotate'); ?>" class="button-secondary" onclick="return confirm('<?php _e('You are about to clean up your database. This may delete expired schedules and older statistics.', 'adrotate'); ?>\n\n<?php _e('Are you sure you want to continue?', 'adrotate'); ?>\n\n<?php _e('This might take a while and may slow down your site during this action!', 'adrotate'); ?>\n\n<?php _e('OK to continue, CANCEL to stop.', 'adrotate'); ?>')" /><br />
-			<label for="adrotate_db_cleanup_statistics"><input type="checkbox" name="adrotate_db_cleanup_statistics" value="1" /> <?php _e('Delete stats older than 356 days (Optional).', 'adrotate'); ?></label><br />
-			<span class="description"><?php _e('AdRotate creates empty records when you start making ads, groups or schedules. In rare occasions these records are faulty.', 'adrotate'); ?><br /><?php _e('If you made an ad, group or schedule that does not save when you make it use this button to delete those empty records.', 'adrotate'); ?><br /><?php _e('Additionally you can clean up old schedules and/or statistics. This will improve the speed of your site.', 'adrotate'); ?></span>
+			<input type="submit" id="post-role-submit" name="adrotate_db_cleanup_submit" value="<?php _e('Clean-up Database', 'adrotate'); ?>" class="button-secondary" onclick="return confirm('<?php _e('You are about to clean up your database. This may delete expired schedules, older statistics and try to delete export files', 'adrotate'); ?>\n\n<?php _e('Are you sure you want to continue?', 'adrotate'); ?>\n<?php _e('THIS ACTION CAN NOT BE UNDONE!', 'adrotate'); ?>')" /><br />
+			<label for="adrotate_db_cleanup_statistics"><input type="checkbox" name="adrotate_db_cleanup_statistics" value="1" /> <?php _e('Delete stats older than 356 days.', 'adrotate'); ?></label><br />
+			<label for="adrotate_db_cleanup_exportfiles"><input type="checkbox" name="adrotate_db_cleanup_exportfiles" value="1" /> <?php _e('Delete leftover export files.', 'adrotate'); ?></label><br />
+			<span class="description"><?php _e('For when you create an advert, group or schedule and it does not save or keep changes you make.', 'adrotate-pro'); ?><br /><?php _e('Additionally you can delete statistics and/or unused export files. This will improve the speed of your site.', 'adrotate'); ?></span>
 		</td>
 	</tr>
 	<tr>
@@ -50,7 +51,7 @@
 		<td>
 			<input type="checkbox" name="adrotate_debug" <?php if($adrotate_debug['general'] == true) { ?>checked="checked" <?php } ?> /> General - <span class="description"><?php _e('Troubleshoot ads and how they are selected. Visible on the front-end.', 'adrotate'); ?></span><br />
 			<input type="checkbox" name="adrotate_debug_publisher" <?php if($adrotate_debug['publisher'] == true) { ?>checked="checked" <?php } ?> /> Publisher - <span class="description"><?php _e('View advert specs and (some) stats in the dashboard.', 'adrotate'); ?></span><br />
-			<input type="checkbox" name="adrotate_debug_timers" <?php if($adrotate_debug['timers'] == true) { ?>checked="checked" <?php } ?> /> Clicktracking - <span class="description"><?php _e('Disable timers for clicks and impressions and enable a alert window for clicktracking.', 'adrotate'); ?></span><br />
+			<input type="checkbox" name="adrotate_debug_timers" <?php if($adrotate_debug['timers'] == true) { ?>checked="checked" <?php } ?> /> Clicktracking - <span class="description"><?php _e('Disable timers for clicks and impressions.', 'adrotate'); ?></span><br />
 			<input type="checkbox" name="adrotate_debug_track" <?php if($adrotate_debug['track'] == true) { ?>checked="checked" <?php } ?> /> Tracking Encryption - <span class="description"><?php _e('Temporarily disable encryption on the redirect url.', 'adrotate'); ?></span><br />
 		</td>
 	</tr>
@@ -63,20 +64,34 @@
 		<td colspan="3"><?php _e('Normal', 'adrotate'); ?>: <?php echo $advert_status['normal']; ?>, <?php _e('Error', 'adrotate'); ?>: <?php echo $advert_status['error']; ?>, <?php _e('Expired', 'adrotate'); ?>: <?php echo $advert_status['expired']; ?>, <?php _e('Expires Soon', 'adrotate'); ?>: <?php echo $advert_status['expiressoon']; ?>, <?php _e('Unknown', 'adrotate'); ?>: <?php echo $advert_status['unknown']; ?>.</td>
 	</tr>
 	<tr>
-		<th width="15%"><?php _e('Banners/assets Folder', 'adrotate'); ?></th>
-		<td>
-			<?php echo (is_writeable(ABSPATH.$adrotate_config['banner_folder'])) ? '<span style="color:#009900;">'.__('Exists and appears writable', 'adrotate-pro').'</span>' : '<span style="color:#CC2900;">'.__('Not writable or does not exist', 'adrotate-pro').'</span>'; ?>
+		<th width="15%"><?php _e('Banners/assets Folder', 'adrotate-pro'); ?></th>
+		<td colspan="3">
+			<?php
+			echo WP_CONTENT_DIR.'/'.$adrotate_config['banner_folder'].'/ -> ';
+			echo (is_writeable(WP_CONTENT_DIR.'/'.$adrotate_config['banner_folder']).'/') ? '<span style="color:#009900;">'.__('Exists and appears writable', 'adrotate-pro').'</span>' : '<span style="color:#CC2900;">'.__('Not writable or does not exist', 'adrotate-pro').'</span>';
+			?>
 		</td>
-		<th width="15%"><?php _e('Reports Folder', 'adrotate'); ?></th>
-		<td>
-			<?php echo (is_writable(ABSPATH.'wp-content/reports/')) ? '<span style="color:#009900;">'.__('Exists and appears writable', 'adrotate-pro').'</span>' : '<span style="color:#CC2900;">'.__('Not writable or does not exist', 'adrotate-pro').'</span>'; ?>
+	</tr>
+	<tr>
+		<th width="15%"><?php _e('Reports Folder', 'adrotate-pro'); ?></th>
+		<td colspan="3">
+			<?php
+			echo WP_CONTENT_DIR.'/reports/'.' -> ';
+			echo (is_writable(WP_CONTENT_DIR.'/reports/')) ? '<span style="color:#009900;">'.__('Exists and appears writable', 'adrotate-pro').'</span>' : '<span style="color:#CC2900;">'.__('Not writable or does not exist', 'adrotate-pro').'</span>';
+			?>
 		</td>
 	</tr>
 	<tr>
 		<th width="15%"><?php _e('Advert evaluation', 'adrotate'); ?></th>
 		<td><?php if(!$adevaluate) '<span style="color:#CC2900;">'._e('Not scheduled! Re-activate the plugin from the plugins page.', 'adrotate-pro').'</span>'; else echo '<span style="color:#009900;">'.date_i18n(get_option('date_format')." H:i", $adevaluate).'</span>'; ?></td>
-		<th width="15%">&nbsp;</th>
-		<td>&nbsp;</td>
+		<th width="15%"><?php _e('Clean Trackerdata', 'adrotate-pro'); ?></th>
+		<td><?php if(!$tracker) '<span style="color:#CC2900;">'._e('Not scheduled!', 'adrotate-pro').'</span>'; else echo '<span style="color:#009900;">'.date_i18n(get_option('date_format')." H:i", $tracker).'</span>'; ?></td>
+	</tr>
+	<tr>
+		<th valign="top"><?php _e('Background tasks', 'adrotate-pro'); ?></th>
+		<td colspan="3">
+			<a class="button" href="admin.php?page=adrotate&tasks=1"><?php _e('Reset background tasks', 'adrotate'); ?></a>
+		</td>
 	</tr>
 </table>
 
@@ -90,10 +105,9 @@
 		<td><?php _e('Current:', 'adrotate'); ?> <?php echo '<span style="color:#009900;">'.$adrotate_db_version['current'].'</span>'; ?> <?php if($adrotate_db_version['current'] != ADROTATE_DB_VERSION) { echo '<span style="color:#CC2900;">'; _e('Should be:', 'adrotate'); echo ' '.ADROTATE_DB_VERSION; echo '</span>'; } ?><br /><?php _e('Previous:', 'adrotate'); ?> <?php echo $adrotate_db_version['previous']; ?></td>
 	</tr>
 	<tr>
-		<th valign="top">Manual upgrade</th>
+		<th valign="top"><?php _e('Manual upgrade', 'adrotate-pro'); ?></th>
 		<td colspan="3">
-			<a class="button" href="admin.php?page=adrotate&upgrade=1" onclick="return confirm('<?php _e('YOU ARE ABOUT TO DO A MANUAL UPDATE FOR ADROTATE.', 'adrotate'); ?>\n<?php _e('Make sure you have a database backup!', 'adrotate'); ?>\n\n<?php _e('This might take a while and may slow down your site during this action!', 'adrotate'); ?>\n\n<?php _e('OK to continue, CANCEL to stop.', 'adrotate'); ?>')">Run Updater</a><br />
-			<span class="description"><?php _e('Attempt to update the database and migrate settings where required or relevant. Normally you should not need or use this option.', 'adrotate'); ?></span>
+			<a class="button" href="admin.php?page=adrotate&upgrade=1" onclick="return confirm('<?php _e('YOU ARE ABOUT TO DO A MANUAL UPDATE FOR ADROTATE.', 'adrotate'); ?>\n<?php _e('Make sure you have a database backup!', 'adrotate'); ?>\n\n<?php _e('This might take a while and may slow down your site during this action!', 'adrotate'); ?>\n\n<?php _e('OK to continue, CANCEL to stop.', 'adrotate'); ?>')"><?php _e('Run updater', 'adrotate'); ?></a>
 		</td>
 	</tr>
 </table>

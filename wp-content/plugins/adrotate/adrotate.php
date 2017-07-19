@@ -7,13 +7,13 @@ Author URI: http://ajdg.solutions/?utm_campaign=homepage&utm_medium=plugin-info&
 Description: The popular choice for monetizing your website with adverts while keeping things simple. Start making money today!
 Text Domain: adrotate
 Domain Path: /languages/
-Version: 3.17
+Version: 4.4
 License: GPLv3
 */
 
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2016 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -22,23 +22,24 @@ License: GPLv3
 ------------------------------------------------------------------------------------ */
 
 /*--- AdRotate values ---------------------------------------*/
-define("ADROTATE_DISPLAY", '3.17');
-define("ADROTATE_VERSION", 385);
-define("ADROTATE_DB_VERSION", 60);
+define("ADROTATE_DISPLAY", '4.4');
+define("ADROTATE_VERSION", 390);
+define("ADROTATE_DB_VERSION", 63);
+$plugin_folder = plugin_dir_path(__FILE__);
 /*-----------------------------------------------------------*/
 
 /*--- Load Files --------------------------------------------*/
-include_once(dirname(__FILE__).'/adrotate-setup.php');
-include_once(dirname(__FILE__).'/adrotate-manage-publisher.php');
-include_once(dirname(__FILE__).'/adrotate-functions.php');
-include_once(dirname(__FILE__).'/adrotate-statistics.php');
-include_once(dirname(__FILE__).'/adrotate-export.php');
-include_once(dirname(__FILE__).'/adrotate-output.php');
-include_once(dirname(__FILE__).'/adrotate-widget.php');
+include_once($plugin_folder.'/adrotate-setup.php');
+include_once($plugin_folder.'/adrotate-manage-publisher.php');
+include_once($plugin_folder.'/adrotate-functions.php');
+include_once($plugin_folder.'/adrotate-statistics.php');
+include_once($plugin_folder.'/adrotate-export.php');
+include_once($plugin_folder.'/adrotate-output.php');
+include_once($plugin_folder.'/adrotate-widget.php');
 /*-----------------------------------------------------------*/
 
 /*--- Check and Load config ---------------------------------*/
-load_plugin_textdomain('adrotate', false, basename(dirname(__FILE__)) . '/language');
+load_plugin_textdomain('adrotate', false, basename($plugin_folder) . '/language');
 $adrotate_config = get_option('adrotate_config');
 $adrotate_crawlers = get_option('adrotate_crawlers');
 $adrotate_version = get_option("adrotate_version");
@@ -51,6 +52,7 @@ register_activation_hook(__FILE__, 'adrotate_activate');
 register_deactivation_hook(__FILE__, 'adrotate_deactivate');
 register_uninstall_hook(__FILE__, 'adrotate_uninstall');
 add_action('adrotate_evaluate_ads', 'adrotate_evaluate_ads');
+add_action('adrotate_empty_trackerdata', 'adrotate_empty_trackerdata');
 add_action('widgets_init', create_function('', 'return register_widget("adrotate_widgets");'));
 /*-----------------------------------------------------------*/
 
@@ -185,7 +187,7 @@ function adrotate_manage() {
 
 		$allbanners = $wpdb->get_results("SELECT `id`, `title`, `type`, `tracker`, `weight` FROM `{$wpdb->prefix}adrotate` WHERE (`type` != 'empty' OR `type` != 'a_empty' OR `type` != 'queue') ORDER BY `id` ASC;");
 
-		$activebanners = $errorbanners = $disabledbanners = false;
+		$active = $disabled = $error = false;
 		foreach($allbanners as $singlebanner) {
 			$starttime = $stoptime = 0;
 			$starttime = $wpdb->get_var("SELECT `starttime` FROM `{$wpdb->prefix}adrotate_schedule`, `{$wpdb->prefix}adrotate_linkmeta` WHERE `ad` = '".$singlebanner->id."' AND `schedule` = `{$wpdb->prefix}adrotate_schedule`.`id` ORDER BY `starttime` ASC LIMIT 1;");
@@ -197,7 +199,7 @@ function adrotate_manage() {
 			if($type == 'active' AND $stoptime <= $now) $type = 'expired'; 
 
 			if($type == 'active' OR $type == '7days') {
-				$activebanners[$singlebanner->id] = array(
+				$active[$singlebanner->id] = array(
 					'id' => $singlebanner->id,
 					'title' => $singlebanner->title,
 					'type' => $type,
@@ -209,7 +211,7 @@ function adrotate_manage() {
 			}
 			
 			if($type == 'error' OR $type == 'expired' OR $type == '2days') {
-				$errorbanners[$singlebanner->id] = array(
+				$error[$singlebanner->id] = array(
 					'id' => $singlebanner->id,
 					'title' => $singlebanner->title,
 					'type' => $type,
@@ -221,7 +223,7 @@ function adrotate_manage() {
 			}
 			
 			if($type == 'disabled') {
-				$disabledbanners[$singlebanner->id] = array(
+				$disabled[$singlebanner->id] = array(
 					'id' => $singlebanner->id,
 					'title' => $singlebanner->title,
 					'type' => $type,
@@ -244,14 +246,14 @@ function adrotate_manage() {
     	<?php 
 	    if ($view == "" OR $view == "manage") {
 			// Show list of errorous ads if any			
-			if ($errorbanners) {
+			if ($error) {
 				include("dashboard/publisher/adverts-error.php");
 			}
 	
 			include("dashboard/publisher/adverts-main.php");
 
 			// Show disabled ads, if any
-			if ($disabledbanners) {
+			if ($disabled) {
 				include("dashboard/publisher/adverts-disabled.php");
 			}		
 		} else if($view == "addnew" OR $view == "edit") { 
@@ -356,14 +358,14 @@ function adrotate_options() {
 		<?php if($status > 0) adrotate_status($status, array('error' => $error)); ?>
 
 		<h2 class="nav-tab-wrapper">  
-            <a href="?page=adrotate-settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">General</a>  
-            <a href="?page=adrotate-settings&tab=notifications" class="nav-tab <?php echo $active_tab == 'notifications' ? 'nav-tab-active' : ''; ?>">Notifications</a>  
-            <a href="?page=adrotate-settings&tab=stats" class="nav-tab <?php echo $active_tab == 'stats' ? 'nav-tab-active' : ''; ?>">Stats</a>  
-            <a href="?page=adrotate-settings&tab=geo" class="nav-tab <?php echo $active_tab == 'geo' ? 'nav-tab-active' : ''; ?>">Geo Targeting</a>  
-            <a href="?page=adrotate-settings&tab=advertisers" class="nav-tab <?php echo $active_tab == 'advertisers' ? 'nav-tab-active' : ''; ?>">Advertisers</a>  
-            <a href="?page=adrotate-settings&tab=roles" class="nav-tab <?php echo $active_tab == 'roles' ? 'nav-tab-active' : ''; ?>">Roles</a>  
-            <a href="?page=adrotate-settings&tab=misc" class="nav-tab <?php echo $active_tab == 'misc' ? 'nav-tab-active' : ''; ?>">Misc</a>  
-            <a href="?page=adrotate-settings&tab=maintenance" class="nav-tab <?php echo $active_tab == 'maintenance' ? 'nav-tab-active' : ''; ?>">Maintenance</a>  
+            <a href="?page=adrotate-settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>"><?php _e('General', 'adrotate'); ?></a>  
+            <a href="?page=adrotate-settings&tab=notifications" class="nav-tab <?php echo $active_tab == 'notifications' ? 'nav-tab-active' : ''; ?>"><?php _e('Notifications', 'adrotate'); ?></a>  
+            <a href="?page=adrotate-settings&tab=stats" class="nav-tab <?php echo $active_tab == 'stats' ? 'nav-tab-active' : ''; ?>"><?php _e('Stats', 'adrotate'); ?></a>  
+            <a href="?page=adrotate-settings&tab=geo" class="nav-tab <?php echo $active_tab == 'geo' ? 'nav-tab-active' : ''; ?>"><?php _e('Geo Targeting', 'adrotate'); ?></a>  
+            <a href="?page=adrotate-settings&tab=advertisers" class="nav-tab <?php echo $active_tab == 'advertisers' ? 'nav-tab-active' : ''; ?>"><?php _e('Advertisers', 'adrotate'); ?></a>  
+            <a href="?page=adrotate-settings&tab=roles" class="nav-tab <?php echo $active_tab == 'roles' ? 'nav-tab-active' : ''; ?>"><?php _e('Roles', 'adrotate'); ?></a>  
+            <a href="?page=adrotate-settings&tab=misc" class="nav-tab <?php echo $active_tab == 'misc' ? 'nav-tab-active' : ''; ?>"><?php _e('Misc', 'adrotate'); ?></a>  
+            <a href="?page=adrotate-settings&tab=maintenance" class="nav-tab <?php echo $active_tab == 'maintenance' ? 'nav-tab-active' : ''; ?>"><?php _e('Maintenance', 'adrotate'); ?></a>  
         </h2>		
 
 		<?php
@@ -399,6 +401,7 @@ function adrotate_options() {
 
 			$adevaluate = wp_next_scheduled('adrotate_evaluate_ads');
 			$adschedule = wp_next_scheduled('adrotate_notification');
+			$tracker = wp_next_scheduled('adrotate_empty_trackerdata');
 
 			include("dashboard/settings/maintenance.php");						
 		} elseif($active_tab == 'license') {

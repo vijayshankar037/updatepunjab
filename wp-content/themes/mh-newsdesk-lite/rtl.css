@@ -2,6 +2,7 @@
 
 body { direction: rtl; unicode-bidi: embed; }
 blockquote { border-right: 5px solid #005a8c; border-left: none; }
+.screen-reader-text { right: -9999rem; left: auto; }
 .mh-col { float: right; margin-right: 2.5%; margin-left: 0; }
 .mh-col:first-child { margin-right: 0; }
 .home-3 { margin-right: 3.86%; margin-left: 0; }
@@ -37,13 +38,14 @@ dd { margin-right: 30px; margin-right: 1.875rem; margin-left: 0; }
 .gallery-caption:before { right: 0; left: auto; }
 .search-form { float: left; }
 .entry-content .search-form { float: right; }
-.search-form .screen-reader-text { right: -9999px; left: auto; }
 .copyright-wrap { float: right; }
 .widget-list li:hover { padding-right: 10px; padding-left: 0; }
 .cp-thumb-small { float: right; margin: 0 0 0 20px; }
 .uw-avatar { float: right; margin-left: 10px; margin-left: 0.625rem; margin-right: 0; }
 .sb-widget ul .cat-item:hover, .sb-widget ul .menu-item:hover, .sb-widget ul .page_item:hover, .footer-widgets ul .cat-item:hover, .footer-widgets ul .menu-item:hover, .footer-widgets ul .page_item:hover { padding-right: 10px; padding-left: 0; }
 #wp-calendar caption, #wp-calendar #prev { text-align: right; }
+.textwidget ul, .textwidget ol { margin: 0 15px 20px 0; }
+.textwidget ul ul, .textwidget ol ol { margin: 0 15px 0 0; }
 .fa-chevron-left:before { content: "\f054"; }
 .fa-chevron-right:before { content: "\f053"; }
 

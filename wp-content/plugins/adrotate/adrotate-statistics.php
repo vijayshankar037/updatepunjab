@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -11,10 +11,7 @@
 
 /*-------------------------------------------------------------
  Name:      adrotate_draw_graph
-
  Purpose:   Draw graph using ElyCharts
- Receive:   $id, $labels, $clicks, $impressions
- Return:    -None-
  Since:		3.8
 -------------------------------------------------------------*/
 function adrotate_draw_graph($id = 0, $labels = 0, $clicks = 0, $impressions = 0) {
@@ -84,10 +81,7 @@ function adrotate_draw_graph($id = 0, $labels = 0, $clicks = 0, $impressions = 0
 
 /*-------------------------------------------------------------
  Name:      adrotate_stats
-
  Purpose:   Generate latest number of clicks and impressions
- Receive:   $ad, $when
- Return:    $stats
  Since:		3.8
 -------------------------------------------------------------*/
 function adrotate_stats($ad, $when = 0, $until = 0) {
@@ -124,10 +118,7 @@ function adrotate_stats($ad, $when = 0, $until = 0) {
 
 /*-------------------------------------------------------------
  Name:      adrotate_stats_nav
-
  Purpose:   Create browsable links for graph
- Receive:   $type, $id, $month, $year
- Return:    $nav
  Since:		3.8
 -------------------------------------------------------------*/
 function adrotate_stats_nav($type, $id, $month, $year) {
@@ -159,10 +150,7 @@ function adrotate_stats_nav($type, $id, $month, $year) {
 
 /*-------------------------------------------------------------
  Name:      adrotate_stats_graph
-
  Purpose:   Generate graph
- Receive:   $type, $id, $chartid, $start, $end
- Return:    $output
  Since:		3.8
 -------------------------------------------------------------*/
 function adrotate_stats_graph($type, $id, $chartid, $start, $end) {
@@ -185,6 +173,7 @@ function adrotate_stats_graph($type, $id, $chartid, $start, $end) {
 	}
 
 	if($stats) {
+/* -- Add in 4.7 or so -- //
 		$dates = $clicks = $impressions = '';
 
 		foreach($stats as $result) {
@@ -195,6 +184,41 @@ function adrotate_stats_graph($type, $id, $chartid, $start, $end) {
 			$clicks .= ','.$result['clicks'];
 			$impressions .= ','.$result['impressions'];
 		}
+// -- End Add -- */
+
+// -- Remove in 4.7 or so -- //
+		$dates = $clicks = $impressions = ''; // To store the final graph data
+		$day_start = $start; // Midnight of the day (start)
+		$day_end = $day_start + 86399; // 1 second before midnight of the next day
+
+		$i = 0;
+		foreach($stats as $result) {
+			if(empty($result['clicks'])) $result['clicks'] = '0';
+			if(empty($result['impressions'])) $result['impressions'] = '0';
+
+			if($result['thetime'] >= $day_start AND $result['thetime'] <= $day_end) {
+				if(empty($graph[$i]['clicks'])) $graph[$i]['clicks'] = '0';
+				if(empty($graph[$i]['impressions'])) $graph[$i]['impressions'] = '0';
+
+				$sum_clicks = $graph[$i]['clicks'] + $result['clicks'];
+				$sum_impressions = $graph[$i]['impressions'] + $result['impressions'];
+			} else {
+				$day_start = $result['thetime'];
+				$day_end = $day_start + 86399;
+				$sum_clicks = $result['clicks'];
+				$sum_impressions = $result['impressions'];
+				$i++;
+			}
+			$graph[$i] = array('thetime' => $day_start, 'clicks' => $sum_clicks, 'impressions' => $sum_impressions);
+			unset($sum_clicks, $sum_impressions);
+		}
+
+		foreach($graph as $result) {
+			$dates .= ',"'.date_i18n("d M", $result['thetime']).'"';
+			$clicks .= ','.$result['clicks'];
+			$impressions .= ','.$result['impressions'];
+		}
+// -- End Remove -- //
 
 		$dates = trim($dates, ",");
 		$clicks = trim($clicks, ",");
@@ -203,7 +227,7 @@ function adrotate_stats_graph($type, $id, $chartid, $start, $end) {
 		$output = '';
 		$output .= '<div id="chart-1" style="height:300px; width:100%;"></div>';
 		$output .= adrotate_draw_graph($chartid, $dates, $clicks, $impressions);
-		unset($stats, $dates, $clicks, $impressions);
+		unset($stats, $graph, $dates, $clicks, $impressions);
 	} else {
 		$output = __('No data to show!', 'adrotate');
 	} 
@@ -213,10 +237,7 @@ function adrotate_stats_graph($type, $id, $chartid, $start, $end) {
 
 /*-------------------------------------------------------------
  Name:      adrotate_ctr
-
  Purpose:   Calculate Click-Through-Rate
- Receive:   $clicks, $impressions, $round
- Return:    $ctr
  Since:		3.7
 -------------------------------------------------------------*/
 function adrotate_ctr($clicks = 0, $impressions = 0, $round = 2) { 
@@ -232,10 +253,7 @@ function adrotate_ctr($clicks = 0, $impressions = 0, $round = 2) {
 
 /*-------------------------------------------------------------
  Name:      adrotate_date_start
-
  Purpose:   Get and return the localized UNIX time for the current hour, day and start of the week
- Receive:   $what
- Return:    int
  Since:		3.8.5.1
 -------------------------------------------------------------*/
 function adrotate_date_start($what) {
@@ -277,10 +295,7 @@ function adrotate_date_start($what) {
 
 /*-------------------------------------------------------------
  Name:      adrotate_now
-
  Purpose:   Get and return the localized UNIX time for "now"
- Receive:   -None-
- Return:    int
  Since:		3.8.6.2
 -------------------------------------------------------------*/
 function adrotate_now() {
@@ -289,10 +304,7 @@ function adrotate_now() {
 
 /*-------------------------------------------------------------
  Name:      adrotate_count_impression
-
  Purpose:   Count Impressions where needed
- Receive:   $ad, $group
- Return:    -None-
  Since:		3.10.12
 -------------------------------------------------------------*/
 function adrotate_count_impression($ad, $group = 0, $blog_id = 0) { 
@@ -309,31 +321,25 @@ function adrotate_count_impression($ad, $group = 0, $blog_id = 0) {
 			$impression_timer = $now - $adrotate_config['impression_timer'];
 		}
 
-		$transientkey = "adrotate_impression_".md5($ad.$remote_ip);
-		$saved_timer = get_transient($transientkey);
-		if(false === $saved_timer) {
-			$saved_timer = 0;
-		}
-
-		if($saved_timer < $impression_timer AND adrotate_is_human()) {
-			$stats = $wpdb->get_var($wpdb->prepare("SELECT `id` FROM `{$wpdb->prefix}adrotate_stats` WHERE `ad` = %d AND `group` = %d AND `thetime` = {$hour};", $ad, $group));
-			if($stats > 0) {
-				$wpdb->query("UPDATE `{$wpdb->prefix}adrotate_stats` SET `impressions` = `impressions` + 1 WHERE `id` = {$stats};");
-			} else {
-				$wpdb->insert($wpdb->prefix.'adrotate_stats', array('ad' => $ad, 'group' => $group, 'thetime' => $hour, 'clicks' => 0, 'impressions' => 1));
+		if($remote_ip != "unknown" AND !empty($remote_ip)) {
+			$saved_timer = $wpdb->get_var($wpdb->prepare("SELECT `timer` FROM `".$wpdb->prefix."adrotate_tracker` WHERE `ipaddress` = '%s' AND `stat` = 'i' AND `bannerid` = %d ORDER BY `timer` DESC LIMIT 1;", $remote_ip, $ad));
+			if($saved_timer < $impression_timer AND adrotate_is_human()) {
+				$stats = $wpdb->get_var($wpdb->prepare("SELECT `id` FROM `{$wpdb->prefix}adrotate_stats` WHERE `ad` = %d AND `group` = %d AND `thetime` = {$hour};", $ad, $group));
+				if($stats > 0) {
+					$wpdb->query("UPDATE `{$wpdb->prefix}adrotate_stats` SET `impressions` = `impressions` + 1 WHERE `id` = {$stats};");
+				} else {
+					$wpdb->insert($wpdb->prefix.'adrotate_stats', array('ad' => $ad, 'group' => $group, 'thetime' => $hour, 'clicks' => 0, 'impressions' => 1));
+				}
+	
+				$wpdb->insert($wpdb->prefix."adrotate_tracker", array('ipaddress' => $remote_ip, 'timer' => $now, 'bannerid' => $ad, 'stat' => 'i'));
 			}
-
-			set_transient($transientkey, $now, $adrotate_config['impression_timer']);
 		}
 	}
 } 
 
 /*-------------------------------------------------------------
  Name:      adrotate_impression_callback
-
  Purpose:   Register a impression for dynamic groups
- Receive:   $_POST
- Return:    -None-
  Since:		3.10.14
 -------------------------------------------------------------*/
 function adrotate_impression_callback() {
@@ -359,10 +365,7 @@ function adrotate_impression_callback() {
 
 /*-------------------------------------------------------------
  Name:      adrotate_click_callback
-
  Purpose:   Register clicks for clicktracking
- Receive:   $_POST
- Return:    -None-
  Since:		3.10.14
 -------------------------------------------------------------*/
 function adrotate_click_callback() {
@@ -396,12 +399,7 @@ function adrotate_click_callback() {
 					$click_timer = $now - $adrotate_config['click_timer'];
 				}
 	
-				$transientkey = "adrotate_click_".md5($ad.$remote_ip);
-				$saved_timer = get_transient($transientkey);
-				if(false === $saved_timer) {
-					$saved_timer = 0;
-				}
-
+				$saved_timer = $wpdb->get_var($wpdb->prepare("SELECT `timer` FROM `".$wpdb->prefix."adrotate_tracker` WHERE `ipaddress` = '%s' AND `stat` = 'c' AND `bannerid` = %d ORDER BY `timer` DESC LIMIT 1;", $remote_ip, $ad));
 				if($saved_timer < $click_timer) {
 					$stats = $wpdb->get_var($wpdb->prepare("SELECT `id` FROM `{$wpdb->prefix}adrotate_stats` WHERE `ad` = %d AND `group` = %d AND `thetime` = {$hour};", $ad, $group));
 					if($stats > 0) {
@@ -410,7 +408,7 @@ function adrotate_click_callback() {
 						$wpdb->insert($wpdb->prefix.'adrotate_stats', array('ad' => $ad, 'group' => $group, 'thetime' => $hour, 'clicks' => 1, 'impressions' => 1));
 					}
 
-					set_transient($transientkey, $now, $adrotate_config['click_timer']);
+					$wpdb->insert($wpdb->prefix.'adrotate_tracker', array('ipaddress' => $remote_ip, 'timer' => $now, 'bannerid' => $ad, 'stat' => 'c'));
 				}
 			}
 		}

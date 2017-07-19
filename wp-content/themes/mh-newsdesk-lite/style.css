@@ -1,15 +1,15 @@
 /*****
 Theme Name: MH Newsdesk lite
-Theme URI: http://www.mhthemes.com/themes/mh/newsdesk-lite/
+Theme URI: https://www.mhthemes.com/themes/mh/newsdesk-lite/
 Author: MH Themes
-Author URI: http://www.mhthemes.com/
+Author URI: https://www.mhthemes.com/
 Description: MH Newsdesk is a modern and dynamic news WordPress theme with a beautiful flat design and great flexibility. This news template for WordPress is ideal for up-to-date blogs, online magazines and all kind of other vibrant news websites. MH Newsdesk WordPress theme is focusing on your newsworthy and fresh content. In case you need more features, additional widgets and advanced options to customize your website, you can upgrade to the premium version of MH Newsdesk.
-Version: 1.2.4
+Version: 1.3.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mh-newsdesk-lite
 Domain Path: /languages/
-Tags: two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, theme-options, threaded-comments, full-width-template, translation-ready, rtl-language-support
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, theme-options, threaded-comments, full-width-template, translation-ready, rtl-language-support, blog, news
 *****/
 
 /***** CSS Reset based on the work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/ v2.0 *****/
@@ -69,7 +69,11 @@ a:hover { color: #005a8c; }
 
 /***** Default Google Fonts *****/
 
-h1, h2, h3, h4, h5, h6, .mh-footer, .widget-list li, .cat-item, .page_item, .menu-item, .button, .commentlist .vcard, .pagination { font-family: 'Oswald', Helvetica, Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6, .mh-footer, .widget-list li, .cat-item, .page_item, .menu-item, .button, .submit, .commentlist .vcard, .pagination { font-family: 'Oswald', Helvetica, Arial, sans-serif; }
+
+/***** Accessibility *****/
+
+.screen-reader-text { position: absolute; top: -9999rem; left: -9999rem; }
 
 /***** Columns *****/
 
@@ -219,6 +223,7 @@ select { max-width: 100%; }
 #respond { padding: 20px 20px 10px; padding: 1.25rem 1.25rem 0.625rem; margin-bottom: 30px; margin-bottom: 1.875rem; background: #efefef; }
 #respond h3 { margin-bottom: 20px; margin-bottom: 1.25rem; }
 #commentform p { margin-bottom: 10px; margin-bottom: 0.625rem; }
+#commentform .submit { font-size: 14px; font-size: 0.875rem; text-transform: uppercase; }
 #cancel-comment-reply-link { margin-left: 20px; font-size: 12px; font-size: 0.75rem; font-weight: 400; background: #ccc; padding: 5px; padding: 0.3125rem; color: #fff; }
 #cancel-comment-reply-link:hover { background: #005a8c; }
 .required { color: #be2844; }
@@ -294,11 +299,20 @@ table td { font-size: 12px; font-size: 0.75rem; border: 1px solid #ebebeb; borde
 .search-form input { min-width: 200px; font-size: 11px; line-height: 1; color: #1f1e1e; text-transform: uppercase; }
 .search-form input:hover { min-width: 240px; }
 .search-form .search-submit { display: none; }
-.search-form .screen-reader-text { position: absolute; left: -9999px; overflow: hidden; }
 .search-form .search-field { background: #fff; border: 1px solid #cdcdcd; cursor: pointer; margin: 0; padding: 10px; position: relative; -webkit-appearance: none; -webkit-border-radius: 0; border-radius: 0; }
 .search-form .search-field:active, .search-form .search-field:focus { cursor: text; }
 .sb-widget .search-form { margin: 0 auto; padding: 5%; background: #efefef; width: 90%; }
 .sb-widget .search-form .search-field { max-width: none; width: 92%; }
+
+/***** Multisite Registration Form *****/
+
+#signup-content .mu_register { width: 100%; }
+.mu_register .mu_alert { display: block; margin-bottom: 25px; }
+.mu_register form { max-width: 500px; }
+.mu_register input { box-sizing: border-box; }
+.mu_register .submit { margin-top: 25px; }
+.lead-in { margin-top: 25px; }
+.lead-in a { font-weight: 700; }
 
 /***** Contact Form 7 *****/
 
@@ -342,7 +356,7 @@ table td { font-size: 12px; font-size: 0.75rem; border: 1px solid #ebebeb; borde
 
 .home-columns .mh-fp-large-widget { margin-bottom: -20px; }
 
-/***** Default WordPress Widgets *****/
+/***** WordPress Core Widgets *****/
 
 .sb-widget ul > .cat-item, .sb-widget ul > .menu-item, .sb-widget ul > .page_item { padding: 10px 0; border-bottom: 1px dotted #dcdcdc; }
 .sb-widget ul .cat-item:hover, .sb-widget ul .menu-item:hover, .sb-widget ul .page_item:hover { background: #fdfdfd; padding-left: 10px; }
@@ -352,15 +366,18 @@ table td { font-size: 12px; font-size: 0.75rem; border: 1px solid #ebebeb; borde
 #wp-calendar th { font-weight: 300; }
 #wp-calendar #prev { text-align: left; }
 
+/***** WP Text Widget *****/
+
+.textwidget p { margin-top: 20px; }
+.textwidget p:first-child { margin-top: 0; }
+.textwidget ul { list-style: square; }
+.textwidget ol { list-style: decimal; }
+.textwidget ul, .textwidget ol { margin: 0 0 20px 15px; }
+.textwidget ul ul, .textwidget ol ol { margin: 0 0 0 15px; }
+
 /***** Advertisements *****/
 
 .ad-spot { text-align: center; padding: 19px; background: #efefef; }
-.mh-header .header-wrap, .mh-header .g.g-1 {
-    display: inline-block;
-}
-.g-col.b-1.a-1 img{
-width: 100%;
-}
 
 /***** Media Queries *****/
 

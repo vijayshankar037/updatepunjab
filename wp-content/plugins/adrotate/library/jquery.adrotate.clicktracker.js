@@ -1,6 +1,6 @@
 /*
 Track clicks from special elements
-Arnan de Gans from AJdG Solutions (http://meandmymac.net, https://ajdg.solutions)
+Arnan de Gans (http://www.arnan.me)
 Version: 1.0
 With help from: Fraser Munro
 Original code: Arnan de Gans

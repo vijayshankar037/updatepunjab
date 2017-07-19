@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -40,20 +40,20 @@
 	<tr>
 		<th valign="top"><?php _e('Adblock disguise', 'adrotate'); ?></th>
 		<td>
-			<label for="adrotate_adblock_disguise"><input name="adrotate_adblock_disguise" type="text" class="search-input" size="5" value="getpro" disabled /> <?php _e('Leave empty to disable. Use only lowercaps letters. For example:', 'adrotate'); ?> <?php echo adrotate_rand(6); ?><br />
+			<label for="adrotate_adblock_disguise"><input name="adrotate_adblock_disguise" type="text" class="search-input" size="6" value="getpro" disabled /> <?php _e('Leave empty to disable. Use only lowercaps letters. For example:', 'adrotate'); ?> <?php echo adrotate_rand(6); ?><br />
 			<span class="description"><?php _e('Try and avoid adblock plugins in most modern browsers when using shortcodes.', 'adrotate'); ?><br /><?php _e('To also apply this feature to widgets, use a text widget with a shortcode instead of the AdRotate widget.', 'adrotate'); ?><br /><?php _e('Avoid the use of obvious keywords or filenames in your adverts or this feature will have little effect!', 'adrotate'); ?></span>
 		</td>
 	</tr>
 </table>
 
 <h3><?php _e('Banner Folder', 'adrotate'); ?></h3>
-<span class="description"><?php _e('Set a location where your banner images will be stored.', 'adrotate'); ?></span>
+<span class="description"><?php _e('Set a folder where your banner images will be stored.', 'adrotate'); ?></span>
 <table class="form-table">
 	<tr>
-		<th valign="top"><?php _e('Location', 'adrotate'); ?></th>
+		<th valign="top"><?php _e('Folder name', 'adrotate'); ?></th>
 		<td>
-			<label for="adrotate_banner_folder"><?php echo ABSPATH; ?><input name="adrotate_banner_folder_disabled" type="text" class="search-input" size="30" value="<?php echo $adrotate_config['banner_folder']; ?>" disabled="1" /> <?php _e('(Default: wp-content/banners/).', 'adrotate'); ?><br />
-			<span class="description"><?php _e('To try and trick ad blockers you could set the folder to something crazy like:', 'adrotate'); ?> "/wp-content/<?php echo adrotate_rand(12); ?>/".<br />
+			<label for="adrotate_banner_folder"><?php echo WP_CONTENT_DIR; ?>/<input name="adrotate_banner_folder_disabled" type="text" class="search-input" size="20" value="<?php echo $adrotate_config['banner_folder']; ?>" disabled="1" />/ <?php _e('(Default: banners).', 'adrotate'); ?><br />
+			<span class="description"><?php _e('To try and trick ad blockers you could set the folder to something crazy like:', 'adrotate'); ?> "<?php echo adrotate_rand(12); ?>".<br />
 			<?php _e("This folder will not be automatically created if it doesn't exist. AdRotate will show errors when the folder is missing.", 'adrotate'); ?></span>
 		</td>
 	</tr>

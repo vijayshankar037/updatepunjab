@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -37,39 +37,39 @@
 			<tr>
 				<td scope="col" class="manage-column column-cb check-column"><input type="checkbox" /></td>
 				<th width="2%"><center><?php _e('ID', 'adrotate'); ?></center></th>
+				<th><?php _e('Name', 'adrotate'); ?></th>
 				<th width="15%"><?php _e('Start / End', 'adrotate'); ?></th>
-				<th><?php _e('Title', 'adrotate'); ?></th>
 			</tr>
 			</thead>
 			<tbody>
-		<?php foreach($errorbanners as $errbanner) {
-			$grouplist = adrotate_ad_is_in_groups($errbanner['id']);
+		<?php foreach($error as $banner) {
+			$grouplist = adrotate_ad_is_in_groups($banner['id']);
 			
 			if($adrotate_debug['publisher'] == true) {
 				echo "<tr><td>&nbsp;</td><td><strong>[DEBUG]</strong></td><td colspan='9'>";
 				echo "Ad Specs: <pre>";
-				print_r($errbanner); 
+				print_r($banner); 
 				echo "</pre></td></tr>"; 
 			}
 			
-			$errorclass = '';
-			if($errbanner['type'] == 'error') $errorclass = ' row_error'; 
-			if($errbanner['type'] == 'expired') $errorclass = ' row_inactive';
-			if($errbanner['type'] == '2days') $errorclass = ' row_urgent';
+			$class = '';
+			if($banner['type'] == 'error') $class = ' row_yellow'; 
+			if($banner['type'] == 'expired') $class = ' row_red';
+			if($banner['type'] == '2days') $class = ' row_orange';
 			?>
-		    <tr id='adrotateindex' class='<?php echo $errorclass; ?>'>
-				<th class="check-column"><input type="checkbox" name="errorbannercheck[]" value="<?php echo $errbanner['id']; ?>" /></th>
-				<td><center><?php echo $errbanner['id'];?></center></td>
-				<td><?php echo date_i18n("F d, Y", $errbanner['firstactive']);?><br /><span style="color: <?php echo adrotate_prepare_color($errbanner['lastactive']);?>;"><?php echo date_i18n("F d, Y", $errbanner['lastactive']);?></span></td>
-				<td><strong><a class="row-title" href="<?php echo admin_url("/admin.php?page=adrotate-ads&view=edit&ad=".$errbanner['id']);?>" title="<?php _e('Edit', 'adrotate'); ?>"><?php echo stripslashes(html_entity_decode($errbanner['title']));?></a></strong> - <a href="<?php echo admin_url("/admin.php?page=adrotate-ads&view=report&ad=".$errbanner['id']);?>" title="<?php _e('Stats', 'adrotate'); ?>"><?php _e('Stats', 'adrotate'); ?></a><span style="color:#999;"><?php if(strlen($grouplist) > 0) echo '<br /><span style="font-weight:bold;">'.__('Groups:', 'adrotate').'</span> '.$grouplist; ?></span></td>
+		    <tr id='adrotateindex' class='<?php echo $class; ?>'>
+				<th class="check-column"><input type="checkbox" name="errorbannercheck[]" value="<?php echo $banner['id']; ?>" /></th>
+				<td><center><?php echo $banner['id'];?></center></td>
+				<td><strong><a class="row-title" href="<?php echo admin_url("/admin.php?page=adrotate-ads&view=edit&ad=".$banner['id']);?>" title="<?php _e('Edit', 'adrotate'); ?>"><?php echo stripslashes(html_entity_decode($banner['title']));?></a></strong> <?php if($adrotate_config['stats'] == 1 AND $banner['type'] != 'error') { ?>- <a href="<?php echo admin_url('/admin.php?page=adrotate-ads&view=report&ad='.$banner['id']);?>" title="<?php _e('Stats', 'adrotate'); ?>"><?php _e('Stats', 'adrotate'); ?></a><?php } ?><span style="color:#999;"><?php if(strlen($grouplist) > 0) echo '<br /><span style="font-weight:bold;">'.__('Groups:', 'adrotate').'</span> '.$grouplist; ?></span></td>
+				<td><?php echo date_i18n("F d, Y", $banner['firstactive']);?><br /><span style="color: <?php echo adrotate_prepare_color($banner['lastactive']);?>;"><?php echo date_i18n("F d, Y", $banner['lastactive']);?></span></td>
 			</tr>
 			<?php } ?>
 		</tbody>
 	</table>
 
 	<p><center>
-		<span style="border: 1px solid #e6db55; height: 12px; width: 12px; background-color: #ffffe0">&nbsp;&nbsp;&nbsp;&nbsp;</span> <?php _e("Configuration errors.", "adrotate"); ?>
-		&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 1px solid #c00; height: 12px; width: 12px; background-color: #ffebe8">&nbsp;&nbsp;&nbsp;&nbsp;</span> <?php _e("Expires soon.", "adrotate"); ?>
-		&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 1px solid #466f82; height: 12px; width: 12px; background-color: #8dcede">&nbsp;&nbsp;&nbsp;&nbsp;</span> <?php _e("Has expired.", "adrotate"); ?>
+		<span style="border: 1px solid #e6db55; height: 12px; width: 12px; background-color: #ffffe0">&nbsp;&nbsp;&nbsp;&nbsp;</span> <?php _e("Configuration errors", "adrotate"); ?>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 1px solid #c80; height: 12px; width: 12px; background-color: #fdefc3">&nbsp;&nbsp;&nbsp;&nbsp;</span> <?php _e("Expires soon", "adrotate"); ?>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span style="border: 1px solid #c00; height: 12px; width: 12px; background-color: #ffebe8">&nbsp;&nbsp;&nbsp;&nbsp;</span> <?php _e("Expired", "adrotate"); ?>
 	</center></p>
 </form>

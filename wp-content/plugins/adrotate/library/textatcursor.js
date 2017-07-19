@@ -1,11 +1,11 @@
 /*!*********************************************************************
  * A Small Javascript function insert text at the position of the cursor in a HTML textarea.
- * Arnan de Gans from AJdG Solutions (http://meandmymac.net, http://www.ajdg.net)
+ * Arnan de Gans (http://www.arnan.me)
  **********************************************************************/
 
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.

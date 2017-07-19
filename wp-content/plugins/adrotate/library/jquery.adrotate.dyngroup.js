@@ -1,6 +1,6 @@
 /****************************************************************************************
  * Dynamic advert rotation for AdRotate													*
- * Arnan de Gans from AJdG Solutions (http://meandmymac.net, https://ajdg.solutions/)	*
+ * Arnan de Gans from AJdG Solutions (http://www.arnan.me.net)							*
  * Version: 0.8.1														   				*
  * With help from: Mathias Joergensen (http://www.moofy.me), Fraser Munro				*
  * Original code: Arnan de Gans															*
@@ -56,15 +56,14 @@ speed : Time each slide is shown [integer: milliseconds, defaults to 3000]
 				} else { 
 					counter++;
 				}
-
-				$cont.find(".c-" + counter).fadeIn(300);
+				$cont.find(".c-" + counter).show();
 
 				// Impression tracker (Multiple ads)
 	            var tracker = $cont.find(".c-" + counter + ' a').attr("data-track");
 				if(typeof tracker !== 'undefined') {
 					impressiontracker(tracker);
 				}
-				$cont.find(".c-" + index).fadeOut(300);
+				$cont.find(".c-" + index).hide();
 			}
 			
 			function play() {

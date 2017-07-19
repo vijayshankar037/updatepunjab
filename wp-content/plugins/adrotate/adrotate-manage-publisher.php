@@ -1,7 +1,7 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2015 Arnan de Gans. All Rights Reserved.
+*  Copyright 2008-2017 Arnan de Gans. All Rights Reserved.
 *  ADROTATE is a trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
@@ -53,10 +53,10 @@ function adrotate_insert_input() {
 		if(isset($_POST['adrotate_image'])) $image_field = strip_tags(trim($_POST['adrotate_image'], "\t\n "));
 		if(isset($_POST['adrotate_image_dropdown'])) $image_dropdown = strip_tags(trim($_POST['adrotate_image_dropdown'], "\t\n "));
 		if(isset($_POST['adrotate_tracker'])) $tracker = strip_tags(trim($_POST['adrotate_tracker'], "\t\n "));
-		if(isset($_POST['adrotate_responsive'])) $responsive = strip_tags(trim($_POST['adrotate_responsive'], "\t\n "));
 		
-		// Misc variabled
-		$groups = $type = $group_array = '';
+		// Misc variables
+		$type = '';
+		$groups = array();
 		if(isset($_POST['groupselect'])) $groups = $_POST['groupselect'];
 		if(isset($_POST['adrotate_type'])) $type = strip_tags(trim($_POST['adrotate_type'], "\t\n "));
 	
@@ -73,11 +73,11 @@ function adrotate_insert_input() {
 			if(preg_match("/%RANDOM%/", $bannercode)) $bannercode = str_replace('%RANDOM%', '%random%', $bannercode);
 	
 			// Sort out start dates
-			if(strlen($smonth) > 0 AND !is_numeric($smonth)) 	$smonth 	= date_i18n('m');
-			if(strlen($sday) > 0 AND !is_numeric($sday)) 		$sday 		= date_i18n('d');
-			if(strlen($syear) > 0 AND !is_numeric($syear)) 		$syear 		= date_i18n('Y');
-			if(strlen($shour) > 0 AND !is_numeric($shour)) 		$shour 		= date_i18n('H');
-			if(strlen($sminute) > 0 AND !is_numeric($sminute))	$sminute	= date_i18n('i');
+			if(strlen($smonth) > 0 AND !is_numeric($smonth)) $smonth = date_i18n('m');
+			if(strlen($sday) > 0 AND !is_numeric($sday)) $sday = date_i18n('d');
+			if(strlen($syear) > 0 AND !is_numeric($syear)) $syear = date_i18n('Y');
+			if(strlen($shour) > 0 AND !is_numeric($shour)) $shour = date_i18n('H');
+			if(strlen($sminute) > 0 AND !is_numeric($sminute)) $sminute = date_i18n('i');
 			if(($smonth > 0 AND $sday > 0 AND $syear > 0) AND strlen($shour) == 0) $shour = '00';
 			if(($smonth > 0 AND $sday > 0 AND $syear > 0) AND strlen($sminute) == 0) $sminute = '00';
 	
@@ -106,16 +106,12 @@ function adrotate_insert_input() {
 			if($enddate <= $startdate) $enddate = $startdate + 7257600; // 84 days (12 weeks)
 		
 			// Sort out click and impressions restrictions
-			if(strlen($maxclicks) < 1 OR !is_numeric($maxclicks))	$maxclicks	= 0;
-			if(strlen($maxshown) < 1 OR !is_numeric($maxshown))		$maxshown	= 0;
+			if(strlen($maxclicks) < 1 OR !is_numeric($maxclicks)) $maxclicks = 0;
+			if(strlen($maxshown) < 1 OR !is_numeric($maxshown)) $maxshown = 0;
 		
 			// Set tracker value
 			if(isset($tracker) AND strlen($tracker) != 0) $tracker = 'Y';
 				else $tracker = 'N';
-	
-			// Set responsive value
-			if(isset($responsive) AND strlen($responsive) != 0) $responsive = 'Y';
-				else $responsive = 'N';
 			
 			// Determine image settings ($image_field has priority!)
 			if(strlen($image_field) > 1) {
@@ -123,7 +119,7 @@ function adrotate_insert_input() {
 				$image = $image_field;
 			} else if(strlen($image_dropdown) > 1) {
 				$imagetype = "dropdown";
-				$image = site_url()."/wp-content/banners/".$image_dropdown;
+				$image = WP_CONTENT_URL."/banners/".$image_dropdown;
 			} else {
 				$imagetype = "";
 				$image = "";
@@ -136,21 +132,15 @@ function adrotate_insert_input() {
 			$wpdb->update($wpdb->prefix.'adrotate_schedule', array('starttime' => $startdate, 'stoptime' => $enddate, 'maxclicks' => $maxclicks, 'maximpressions' => $maxshown), array('id' => $schedule_id));
 
 			// Save the ad to the DB
-			$wpdb->update($wpdb->prefix.'adrotate', array('title' => $title, 'bannercode' => $bannercode, 'updated' => $thetime, 'author' => $author, 'imagetype' => $imagetype, 'image' => $image, 'tracker' => $tracker, 'responsive' => $responsive, 'type' => $active), array('id' => $id));
+			$wpdb->update($wpdb->prefix.'adrotate', array('title' => $title, 'bannercode' => $bannercode, 'updated' => $thetime, 'author' => $author, 'imagetype' => $imagetype, 'image' => $image, 'tracker' => $tracker, 'responsive' => 'N', 'type' => $active), array('id' => $id));
 
-			// Determine Responsive requirement
-			$responsive_count = $wpdb->get_var("SELECT COUNT(*) as `total` FROM `{$wpdb->prefix}adrotate` WHERE `responsive` = 'Y';");
-			update_option('adrotate_responsive_required', $responsive_count);
-	
 			// Fetch group records for the ad
 			$groupmeta = $wpdb->get_results($wpdb->prepare("SELECT `group` FROM `{$wpdb->prefix}adrotate_linkmeta` WHERE `ad` = %d AND `user` = 0 AND `schedule` = 0;", $id));
+			$group_array = array();
 			foreach($groupmeta as $meta) {
 				$group_array[] = $meta->group;
 			}
 			
-			if(empty($group_array)) $group_array = array();
-			if(empty($groups)) $groups = array();
-
 			// Add new groups to this ad
 			$insert = array_diff($groups, $group_array);
 			foreach($insert as &$value) {
@@ -345,8 +335,8 @@ function adrotate_request_action() {
 		if($banner_ids != '') {
 			$return = 'adrotate-ads';
 			if($action == 'export') {
-				if(current_user_can('adrotate_moderate')) {
-					adrotate_export($banner_ids, $specific);
+				if(current_user_can('adrotate_ad_manage')) {
+					adrotate_export($banner_ids);
 					$result_id = 215;
 				} else {
 					adrotate_return($return, 500);
@@ -518,9 +508,9 @@ function adrotate_renew($id, $howlong = 2592000) {
  Purpose:   Export selected banners
  Since:		3.8.5
 -------------------------------------------------------------*/
-function adrotate_export($ids, $format) {
+function adrotate_export($ids) {
 	if(is_array($ids)) {
-		adrotate_export_ads($ids, $format);
+		adrotate_export_ads($ids);
 	}
 }
 
@@ -543,9 +533,7 @@ function adrotate_options_submit() {
 
 			// Turn options off/reset them. Available in AdRotate Pro only
 			$config['textwidget_shortcodes'] = "N";
-			$wpcontent = explode('/', WP_CONTENT_DIR);
-			$wpcontent = end($wpcontent);
-			$config['banner_folder'] = $wpcontent."/banners/";
+			$config['banner_folder'] = "banners";
 			$config['notification_email'] = array();
 			$config['advertiser_email'] = array();
 			$config['enable_geo'] = 0;
@@ -604,6 +592,15 @@ function adrotate_options_submit() {
 			$config['stats'] = (is_numeric($stats) AND $stats >= 0 AND $stats <= 3) ? $stats : 1;
 			$config['enable_loggedin_impressions'] = 'Y';
 			$config['enable_loggedin_clicks'] = 'Y';
+			$config['enable_clean_trackerdata'] = (isset($_POST['adrotate_enable_clean_trackerdata'])) ? 'Y' : 'N';
+
+			if($config['enable_clean_trackerdata'] == "Y" AND !wp_next_scheduled('adrotate_delete_transients')) {
+				wp_schedule_event(adrotate_now(), 'twicedaily', 'adrotate_delete_transients');
+			} 
+			if($config['enable_clean_trackerdata'] == "N" AND wp_next_scheduled('adrotate_delete_transients')) {
+				wp_clear_scheduled_hook('adrotate_delete_transients');
+			} 
+
 			$impression_timer = trim($_POST['adrotate_impression_timer']);
 			$config['impression_timer'] = (is_numeric($impression_timer) AND $impression_timer >= 10 AND $impression_timer <= 3600) ? $impression_timer : 60;
 			$click_timer = trim($_POST['adrotate_click_timer']);

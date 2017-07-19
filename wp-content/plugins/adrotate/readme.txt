@@ -1,41 +1,48 @@
-=== AdRotate ===
+=== AdRotate Banner Manager ===
 Contributors: adegans
 Donate link: http://www.arnan.me/donate/?utm_campaign=donations&utm_medium=readme&utm_source=adrotate-free
-Tags: ads, advert, adverts, banner, monetize, admin, advertise, adrotator, rotator, ad, advertising, advertisement, advertiser, publisher, adsense, chitika, clickbank, broadstreet, geo, geolocation, geotarget, banner manager, advert manager, campaign manager, export, import, maxmind, statistics, stats, report, geoselect, geolite, schedules, schedule, monetize, header, widget, html5 advert, javascript advert, tracking, clicks, impressions, rotate, zone, zones, sidebar, footer, content, posts, pages
+Tags: ad, ads, adsense, advertising, doubleclick, media.net, ad rotator, ad manager, banner manager, advert manager, analytics, advertisement,
 Requires at least: 3.8
-Tested up to: 4.7
-Stable tag: 3.17
+Tested up to: 4.8
+Stable tag: 4.4
 License: GPLv3
- 
-The popular choice for monetizing your website with adverts while keeping things simple. Start making money today!
+
+Monetise your website with adverts while keeping things simple. Start making money today!
 
 == Description ==
 
-Thinking of making some money with your website? Try AdRotate. With AdRotate you can easily place advertising banners pretty much anywhere on your site while managing almost everything from the easy to use dashboard. No fussing with your themes code if you don't want to.
-Create your own adverts with basic HTML/Javascript code or use adverts from your favorite Ad Server such as DFP, AdSense, Chitika, Doubleclick, JuiceAds and many similar services.
+With AdRotate you can easily place advertising banners pretty much anywhere on your site while managing almost everything from the easy to use dashboard. No fussing with your themes code if you don't want to.
 
-Manage your advertising campaigns with ease, right in your dashboard. Check up on how many impressions adverts have. Monitor ad groups and see which are most effective. Make the most of advertising with the many features AdRotate has to offer. AdRotate looks and feels similar to the WordPress dashboard you already know, so you're already familiar with AdRotate before you've even started. Familiarize yourself with the many useful features and you'll be up and running very quickly.
+Using AdRotate you can easily create your own adverts with basic HTML and/or Javascript code or use adverts from your favorite Ad Server such as Media.net, DFP, AdSense, Chitika, Doubleclick, JuiceAds and many more similar ad servers.
 
-AdRotate is also available as a premium plugin. Get even more features and access to AdRotate Geo and email support!
-Geo Targeting, Avoid adblockers, Mobile adverts, Media management and much more! Check out the extras of [AdRotate Pro](https://ajdg.solutions/products/adrotate-for-wordpress/?utm_campaign=adrotate-page&utm_medium=readme&utm_source=adrotate-free)!
+> With AdRotate you manage your advertising campaigns and banners with ease, right in your dashboard. 
 
-> <strong>Premium Support</strong><br>
-> I do not always provide active support for the AdRotate Free plugin on the WordPress.org forums. Personal, one-on-one support via email is available to people who bought [AdRotate Pro](https://ajdg.solutions/products/adrotate-for-wordpress/?utm_campaign=premium_support&utm_medium=readme&utm_source=adrotate-free) only.
-> Also know that AdRotate Pro has a lot of extra features that make managing campaigns even easier. Features like Geo Targeting, Adblocker disguise, Advertisers and Scheduling your campaigns! These valuable tools will be worth your investment if you're serious about advertising!
->
-> <strong>Help getting started</strong><br>
-> If you need some help installing AdRotate or you want someone to handle the initial setup. Take a look at these [services](https://ajdg.solutions/pricing/?utm_campaign=installation_services&utm_medium=readme&utm_source=adrotate-free).
->
-> <strong>Support and Bug Reports</strong><br>
-> All support questions can be posted on my support [Support Forums](https://ajdg.solutions/forums/?utm_campaign=forums&utm_medium=readme&utm_source=adrotate-free).<br>
-> Please post bug reports for AdRotate Pro on [the support forum for bug reports](https://ajdg.solutions/forums/forum/adrotate-for-wordpress/bug-reports/).<br>
+In AdRotate it's easy to check up on how many impressions adverts have. Monitor ad groups and see which are most effective. Make the most of advertising with the many features AdRotate has to offer.
 
-**Some Features**
+AdRotate looks and feels similar to the WordPress dashboard you already know, you're already familiar with AdRotate before you even start using the plugin. Familiarize yourself with the many useful features and you'll be up and running very quickly.
 
-* Works with Google AdSense, DFP and most other referrer/ad servers
-* Easy management of ads and groups of ads
-* Automated Javascript cycles of ads with Dynamic Groups
-* Have your advertisers add/edit/manage their own ads
+Want more features? Get AdRotate Professional! AdRotate Pro has even more features and gives you access to AdRotate Geo and fast personal email support!
+Pro features include; Geo targeting in every country, Fine grained control with schedules, Adblock Disguise, Mobile adverts, Media/asset management and much more!
+Check out the many extras on the [AdRotate Pro website](https://ajdg.solutions/plugins/adrotate-for-wordpress/?utm_campaign=adrotate-page&utm_medium=readme&utm_source=adrotate-free)!
+
+<strong>Getting started</strong>
+You'll be running your advertising campaigns in minutes.
+But if you need a hand installing AdRotate or you want someone to handle the initial setup. Take a look at these [services](https://ajdg.solutions/pricing/?utm_campaign=installation_services&utm_medium=readme&utm_source=adrotate-free).
+
+> Getting started with AdRotate is not all that complex, but a little help or advise is never bad.
+
+<strong>Support and Bug Reports</strong>
+All support questions can be posted on my support [Support Forums](https://ajdg.solutions/forums/?utm_campaign=forums&utm_medium=readme&utm_source=adrotate-free).
+Please post bug reports for AdRotate Pro on [the support forum for bug reports](https://ajdg.solutions/forums/forum/adrotate-for-wordpress/bug-reports/).
+
+> I don't always check the wordpress.org forums, use my forum instead for faster replies!
+
+**Some of AdRotates Features**
+
+* Works with ad servers such as; Media.net, Google AdSense, DFP and most other referrer/ad servers
+* Easy management of adverts and groups of ads
+* Automated Javascript cycles of adverts with Dynamic Groups
+* Have your advertisers add/edit/manage their own adverts
 * Geo Targeting for adverts
 * Accept Paypal payments from the dashboard when selling adverts
 * Mobile adverts (differentiate tablets from phones)
@@ -43,8 +50,9 @@ Geo Targeting, Avoid adblockers, Mobile adverts, Media management and much more!
 * Get push notifications right on your iOS or Android device about adverts and important events
 * Get email notifications when your ads need you
 * Any size advertisement, including 125x125, 468x60, 729x90, 160x600
-* Easy to use stats so you can follow how each advert is performing
-* Responsive adverts
+* Easy to read stats so you can follow how each advert is performing
+* Compatible with plugins like Yoast SEO, W3 Total Cache, SEO Framework, bbPress, Contact form 7, All in one SEO Pack, Jetpack from Automattic, WooCommerce, Wordfence, Regenerate Thumbnails and many more... 
+* Compatible with responsive adverts
 * Daily, monthly and yearly stats
 * Couple adverts to users for personalized stats
 * Advertisers can easily contact you from their dashboard
@@ -53,7 +61,7 @@ Geo Targeting, Avoid adblockers, Mobile adverts, Media management and much more!
 * Preview banners on edit
 * Advanced time schedules and restrictions you control
 * Free use of AdRotate Geo, AJdG Solutions' exclusive Geo Targeting service
-* Exports of statistics
+* Export statistics
 * Multiple groups per banner location
 * Unlimited widgets
 * Show multiple ads at once in a grid, column or row
@@ -61,28 +69,21 @@ Geo Targeting, Avoid adblockers, Mobile adverts, Media management and much more!
 * Dashboard notifications when ads are about to expire or need attention
 * Use shortcodes, widgets or PHP to put ads on your site
 
-NOTE: Certain features are exclusive to AdRotate PRO. Learn more about [AdRotate Pro](https://ajdg.solutions/products/adrotate-for-wordpress/features/?utm_campaign=features&utm_medium=readme&utm_source=adrotate-free).
+AdRotate and AdRotate Pro share many features. But some features are available in AdRotate Professional only. Learn more about [AdRotate Pro](https://ajdg.solutions/plugins/adrotate-for-wordpress/features/?utm_campaign=features&utm_medium=readme&utm_source=adrotate-free) on my website.
 
 **AdRotate Switch**
 
-Looking to switch from another plugin to AdRotate or AdRotate Pro? Check out [AdRotate Switch](https://wordpress.org/plugins/adrotate-switch/) and see if your current advertising plugin is compatible for migrating your data!
+To make switching from other plugins more easy and straightforward I've created AdRotate Switch. Migrate compatible adverts, groups/locations and settings over in just a few clicks.
 
-NOTE: Unsolicited offers, parnterships, job offers, promotional emails or product offers to "enhance" my business or products through this site or any means are not appreciated and will most likely be ignored.
+Compatible plugins include: Ad Injection, Ad King Pro, Advanced Advertising Manager, Advertising Manager, WP Bannerize, BannerMan, Max Banner Ads Pro, Simple Ads Manager, Useful Banner Manager, WP Pro Ad System, wp125, WP-Ad-Manager / Ad Minister, WP Advertize It
+
+Check out [AdRotate Switch](https://wordpress.org/plugins/adrotate-switch/) for more information!
 
 == Installation ==
 
 Installing the plugin is as easy as clicking "Install Now" from your dashboards plugin page.
-For more detailed instructions check out the [installation guide](https://ajdg.solutions/manuals/adrotate-manuals/installing-adrotate-on-your-website/?utm_campaign=setup-manual&utm_medium=readme&utm_source=adrotate-free).
 
-**AdRotate Switch**
-
-Looking to switch from another plugin to AdRotate or AdRotate Pro? Check out [AdRotate Switch](https://wordpress.org/plugins/adrotate-switch/) and see if your current advertising plugin is compatible for migrating your data!
-
-**Useful links**
-
-* [Usage guides](https://ajdg.solutions/manuals/adrotate-manuals/?utm_campaign=adrotate-manual&utm_medium=readme&utm_source=adrotate-free) - Every popular feature explained
-* [Support Forum](https://ajdg.solutions/forums/?utm_campaign=forums&utm_medium=readme&utm_source=adrotate-free) - Ask your questions here
-* [Plugin page](https://ajdg.solutions/products/adrotate-for-wordpress/?utm_campaign=adrotate-page&utm_medium=readme&utm_source=adrotate-free) - Features, possibilities and AdRotate Pro
+For more detailed instructions check out the [installation steps](https://ajdg.solutions/manuals/adrotate-manuals/installing-adrotate-on-your-website/?utm_campaign=setup-manual&utm_medium=readme&utm_source=adrotate-free) on the AdRotate website.
 
 == Frequently Asked Questions ==
 
@@ -95,50 +96,45 @@ You can also post your questions on the [forum](https://ajdg.solutions/forums/?u
 
 == Changelog ==
 
-Be a Pro and go Pro. With [AdRotate Pro](https://ajdg.solutions/products/adrotate-for-wordpress/?utm_campaign=adrotate-page&utm_medium=readme&utm_source=adrotate-free)!
+Be a Professional and go Pro. With [AdRotate Professional](https://ajdg.solutions/plugins/adrotate-for-wordpress/?utm_campaign=adrotate-page&utm_medium=readme&utm_source=adrotate-free)!
 
-= 3.17 FREE =
-* [new] Usage of WP Object Cache for stats
-* [new] Moved tracker data to WP Transient API
-* [change] Stats now counted per hour instead of per day
-* [change] Updated Elycharts to v2.1.6
-* [fix] Post Injection not always in the right location for categories
-* [fix] Tracking hash split in the right values
-* [fix] Graph date labels showing through each other
+= 4.4 FREE =
+* [new] Advert exports to CSV
+* [new] Option to delete old export files in Settings > Maintenance
+* [change] Banner folder must be in wp-content (or it's equivalent)
+* [change] Dashboard tweaks
+* [change] XML exporting no longer supported
+* [change] Advert exporting now requires 'ad_manage' permission
+* [i18n] Settings tabs added
+* [i18n] Updated Spanish by Juanjo Navarra
+* [i18n] Updated all po files with new strings
 
-= 4.2 PRO =
-* [new] Usage of WP Object Cache for stats
-* [new] Moved tracker data to WP Transient API
-* [change] Stats now counted per hour instead of per day
-* [change] Updated Elycharts to v2.1.6
-* [fix] Impressions now always show on adverts dashboard
-* [fix] Post Injection not always in the right location for categories
-* [fix] Undefined notice on Main AdRotate dashboard
-* [fix] Undefined notice on Transactions dashboard
-* [fix] Hide relevant dashboard links if advertisers are disabled
-* [fix] Count correct number of hourly impressions
-* [fix] Tracking hash split in the right values
-* [fix] 'best' and 'least' advert counts showing wrong numbers
-* [fix] Graph date labels showing through each other
-* [fix] Not all Geo Targeting strings translated
-* [i18n] Polish translation via Michal
+= 4.7 PRO =
+* [new] Advert exports to CSV
+* [new] Advert importing from CSV
+* [new] Option to delete old export files in Settings > Maintenance
+* [change] Banner folder must be in wp-content (or it's equivalent)
+* [change] Dashboard tweaks
+* [change] XML importing and exporting no longer supported
+* [change] Advert exporting now requires 'ad_manage' permission
+* [fix] Improved PHP7 compatibility
+* [fix] Sortable columns now properly assigned
+* [fix] Exporting of adverts
+* [i18n] Updated all po files with new strings
 
-All recent changes are available on the [AdRotate website](https://ajdg.solutions/products/adrotate-for-wordpress/development/?utm_campaign=development&utm_medium=readme&utm_source=adrotate-free).
-
-NOTE: Unsolicited offers, parnterships, job offers, promotional emails or product offers to "enhance" my business or products through this site or any means are not appreciated and will most likely be ignored.
+All recent changes are available on the [AdRotate website](https://ajdg.solutions/plugins/adrotate-for-wordpress/development/?utm_campaign=development&utm_medium=readme&utm_source=adrotate-free).
 
 == Upgrade Notice ==
 
-= 3.16.3 =
-* [new] Usage of WP Object Cache for stats
-* [new] Moved tracker data to WP Transient API
-* [change] Stats now counted per hour instead of per day
-* [change] Updated Elycharts to v2.1.6
-* [fix] Post Injection not always in the right location for categories
-* [fix] Tracking hash split in the right values
-* [fix] Graph date labels showing through each other
-
-All recent changes are available on the [AdRotate website](https://ajdg.solutions/products/adrotate-for-wordpress/development/?utm_campaign=development&utm_medium=readme&utm_source=adrotate-free).
+* [new] Advert exports to CSV
+* [new] Option to delete old export files in Settings > Maintenance
+* [change] Banner folder must be in wp-content (or it's equivalent)
+* [change] Dashboard tweaks
+* [change] XML exporting no longer supported
+* [change] Advert exporting now requires 'ad_manage' permission
+* [i18n] Settings tabs added
+* [i18n] Updated Spanish by Juanjo Navarra
+* [i18n] Updated all po files with new strings
 
 == Screenshots ==
 
